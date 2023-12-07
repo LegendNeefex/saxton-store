@@ -7,7 +7,7 @@ function About() {
                 <div class="address">
                     <div class="talk">
                     <h1>Our mission is to make shopping so easier for everyone.</h1>
-                    <p>SaxTon was built on the idea that quality. Use our interactive website and order our valuable items and products, or support us by giving reviews on Saxton.</p>
+                    <p>SaxTon was built on the idea of great quality. Use our interactive website and order our valuable items and products, or support us by giving reviews on Saxton.</p>
                     <a href="/">Read our story</a>
                 </div>
             </div>
