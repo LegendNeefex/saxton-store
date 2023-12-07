@@ -1,13 +1,676 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+  
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Poppins', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+    --primary-color: #fff;
+    --secondary-color:#000;
+    --extra-color:#646363;
+    --default-color:#202142;
+    --more-color:aqua;
+    --some-backgrounds:#f8f9fa;
+;}
+  
+ul {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* body */
+.container{
+    background-color: var(--default-color);    
+    padding: 10px 0;
+    position: relative;
+}
+.container .nav{
+    display: flex;
+    justify-content: space-between;
+}
+.container .nav ul{
+    display: flex;
+    list-style: none;
+}
+.container .logo a{
+    display: flex;
+    color: #fff;
+}
+.container .logo h2{
+    position: absolute;
+    left: 160px;
+}
+.container .logo img{
+    height: 50px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.nav ul{
+    margin-top: 10px;
+}
+.nav li a{
+    margin-right: 40px;
+    color: #fff;
+}
+.nav li a:hover{
+    color: aqua;
+}
+
+/* content */
+.content{
+    margin: 70px 0;
+    text-align: center;
+}
+.content h1{
+    font-size: 50px;
+    color: var(--primary-color);
+    
+}
+.content p{
+    font-size: 20px;
+    width: 60%;
+    margin: 0 auto;
+    color: var(--primary-color);
+}
+.content a{
+    color:var(--primary-color);
+    /* background-color: #fff; */
+    border: 2px solid var(--primary-color);
+    padding: 10px;
+    font-weight: 700;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 600px;
+}
+.content a:hover{
+    color: var(--default-color);
+    background-color: var(--primary-color);
+}
+
+/* Products section */
+/*More on products  */
+.banner{
+    width: 95%;
+    margin: 0 auto;
+}
+.banner .links{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.banner .links a{
+    border:1px solid var(--extra-color);
+    border-radius: 10px;
+    padding: 10px;
+    color:var(--extra-color);
+    font-weight: 700;
+}
+.banner .links a:hover{
+    border: 2px solid var(--default-color);
+    color: var(--default-color);
+}
+.banner .links h2{
+    color: var(--extra-color);
+}
+
+.banCards{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 95%;
+}
+.miniBanCards{
+    box-shadow: 0px 4px 8px 0px var(--extra-color);
+    padding: 20px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.miniBanCards h4{
+    font-size: 20px;
+    color: var(--extra-color);
+}
+.miniBanCards p{
+    font-weight: 700;
+}
+.miniBanCards strong{
+    color: var(--extra-color);
+}
+.miniBanCards img{
+    width: 300px;
+    height: 250px;
+    margin-top: 10px;
+    object-fit: cover;
+}
+.miniBanCards a{
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    white-space: nowrap;
+    border: 2px solid var(--default-color);
+    color: var(--default-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.miniBanCards a:hover{
+    color: var(--primary-color);
+    background-color: var(--default-color);
+}
+
+.MoreContent{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--default-color);
+    padding: 70px;
+    position: relative;
+    margin: 20px 0 0;
+}
+.MoreContent .partOne{
+    width: 40%;
+    margin: 0;
+}
+
+.MoreContent .partOne h3{
+    color: aqua;
+    margin: 10px 0;
+}
+
+.MoreContent .partOne h1{
+    font-size: 30px;
+    color: var(--primary-color);
+}
+.MoreContent .partTwo {
+    width: 40%;
+    margin: 40px 0px;
+}
+.MoreContent .partTwo p{
+    color: var(--primary-color);
+    font-weight: 700;
+}
+.MoreContent .partTwo a{
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 10px 50px;
+    border-radius: 20px;
+    position: absolute;
+    top: 250px;
+    font-weight: 700;
+}
+.MoreContent .partTwo a:hover{
+    background-color: var(--primary-color);
+    color: var(--default-color);
+}
+
+
+/* footer section */
+.containerr{
+    background-color: var(--secondary-color);    
+    padding: 20px 0;
+    position: relative;
+}
+
+.containerr .logo, .containerr .logo h2{
+    margin: 20px 500px;
+}
+
+.containerr .logo a{
+    display: flex;
+    color: #fff;
+}
+.containerr .logo p{
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+.containerr .logo h2{
+    position: absolute;
+    left: 160px;
+   margin-top: 0px;
+}
+.containerr .logo img{
+    height: 50px;
+    width: 200px;
+    object-fit: cover;
+}
+.dot{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 35%;
+}
+
+.dot a{
+    text-decoration:underline;
+
+}
+
+.signBody{
+    width: 80%;
+    margin: 50px auto;
+}
+
+.card input{
+    padding: 10px 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    width: 300px;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid var(--extra-color);
+    
+}
+.card .firstExtra{
+    background-color: var(--default-color);
+    color: var(--primary-color);
+    padding: 10px 120px;
+    white-space: nowrap;
+    border-radius: 10px;
+    /* margin-left: 40px; */
+    
+}
+.card p{
+    font-size: 12px;
+}
+
+.card form{
+    box-shadow: 0px 4px 8px 0px var(--extra-color);
+    padding: 30px;
+    border-radius: 10px;
+    width: 370px;
+}
+.card{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 450px;
+}
+
+.card .textDetails{
+    margin: 80px 0;
+    width: 40%;
+
+}
+.card .textDetails h1{
+    font-size: 50px;
+    color: var(--default-color);
+}
+
+.extra{
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    width: 30%;
+    text-decoration:underline;
+    font-size: 15px;
+}
+
+.extra:hover{
+    color: var(--extra-color);
+}
+.secondExtra{
+    position: absolute;
+    bottom: 80px;
+}
+/* Signup footer */
+.signUpFooter{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+/* Login page */
+.loginCard{
+    box-shadow: 0px 4px 8px 0px var(--extra-color);
+    width: 400px;
+    border-radius: 10px;
+    margin: 50px auto;
+}
+.loginCard form{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+.loginCard form input{
+    margin: 10px 0;
+    padding: 10px 5px 10px;
+    border-radius: 10px;
+    border: 2px solid var(--extra-color);
+}
+.loginCard form .logIn{
+    text-align: center;
+    background-color: var(--default-color);
+    padding: 5px;
+    border-radius: 10px;
+    color: var(--primary-color);
+}
+.loginCard p{
+    font-size: 15px;
+    margin: 10px 0 0;
+}
+.loginCard h3, .loginCard h6{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.loginCard .create{
+    text-align: center;
+    border: 2px solid var(--default-color);
+    padding: 5px;
+    border-radius: 10px;
+    color: var(--default-color);
+    font-weight: 700;
+    margin: 10px 0;
+}
+.loginCard .create:hover{
+    color: var(--primary-color);
+    background-color: var(--default-color);
+}
+.loginCard .log{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.loginCard .log:hover{
+    color:var(--extra-color);
+}
+/* Checkout section */
+.prodDetails h3{
+    padding: 20px;
+    font-size: 25px;
+    margin-left: 40px;
+    color: var(--extra-color);
+}
+.prodDetails{
+    margin-bottom:20vh;
+}
+
+.prodSection{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    /* justify-content: space-between; */
+}
+
+.images img{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.details{
+    margin:50px 30px 0;
+    position: relative;
+}
+.details a{
+    border: 2px solid var(--extra-color);
+    color: var(--extra-color);
+    font-weight: 700;
+    padding: 10px 50px;
+    position: absolute;
+    bottom: 100px;
+}
+.details a:hover{
+    background-color: var(--extra-color);
+    color: var(--primary-color);
+}
+
+.banSpacing{
+    margin-bottom: 50px;
+}
+
+/* Cart section */
+.cartContainer{
+    display: flex;
+    width: 90%;
+    margin: 30px auto 114px;
+    justify-content: space-between;
+}
+.cartContainer .picSide img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.cartContainer .picSide h3{
+    font-weight: 700;
+    text-align: center;
+    font-size: 30px;
+    color: var(--extra-color);
+}
+.cartContainer .textSide, .cartContainer .textSide2{
+    margin-top: 1px;
+    position: relative;
+}
+.cartContainer .textSide h2 , .cartContainer .textSide2 h2{
+    color: var(--extra-color);
+    text-align: center;
+}
+
+.cartContainer .textSide h3{
+    margin-top: 40px;
+    text-align: center;
+}
+.cartContainer .textSide2 input{
+    margin-top: 30px;
+    padding: 10px 0 10px 5px;
+    border-radius: 10px;
+    border: 2px solid var(--extra-color);
+}
+
+.cartContainer .textSide2 label input{
+    pointer-events: none;
+}
+.cartContainer .textSide2 a{
+    background-color: var(--default-color);
+    color: var(--primary-color);
+    font-size: 700;
+    padding: 10px 90px;
+    border-radius: 20px;
+    position: absolute;
+    right: 250px;
+    bottom:0px;
+    white-space: nowrap;
+}
+.cartContainer .textSide2 a:hover{
+    opacity:0.9;
+}
+
+/* Category Section */
+.categoryContainer{
+    background-color: var(--default-color);
+    color: var(--primary-color);
+    padding: 10px;
+}
+
+.category{
+    display: flex;
+    margin: 30px 0 20px;
+}
+
+.category a{
+    margin: 0 35px;
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+.categoryContainer h2{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.category a:hover{
+    opacity: 0.9;
+}
+
+/* Contact section */
+.contactContainer{
+    width: 80%;
+    margin: 40px auto;
+    background-color: var(--some-backgrounds);
+    height: 120vh;
+}
+
+.pill h2, p{
+    font-size: 20px;
+}
+.pill p{
+    font-size: 20px;
+    color: var(--color-link);
+    
+}
+.pill{
+    padding: 30px 0;
+    margin: 0 auto;
+    width: 40%;
+    text-align: center;
+}
+
+.pillar{
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+}
+
+.pillar .int_1{
+    padding: 15px;
+    outline: none;
+    
+}
+.pillar .int_1 textarea{
+    resize: none;
+}
+.pillar .int_2{
+    padding: 20px 0 20px 10px;
+    width: 500px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid var(--extra-color);
+}
+
+.contactContainer .submit{
+    color: #fff;
+    background-color: var(--default-color);
+    border: none;
+    padding: 15px 220px;
+    border-radius: 15px;
+    position: relative;
+    top: 20px;
+}
+
+
+.too{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+}
+.boys h3, p{
+    font-size: 20px;
+}
+.boys{
+    padding: 10px 0;
+}
+.yam{
+    padding: 30px 20px;
+}
+
+/* About us picture */
+.address{
+    padding: 100px;
+    text-align: center;
+    width: 65%;
+    margin: 0 auto;
+}
+.talk h1{
+    color: var(--color-primary);
+    font-size: 40px;
+}
+
+.talk p{
+    padding: 20px;
+    font-size: 20px;
+}
+
+.talk a{
+    color: #fff;
+    background-color: var(--default-color);
+    padding: 15px 30px;
+    border-radius: 10px;
+    position: relative;
+    top: 25px;
+}
+
+.talk a:hover{
+    opacity: 0.9;
+}
+
+
+.our-founding{
+    height: 60vh;
+    background-color: var(--some-backgrounds);
+}
+
+.our-founding .found{
+    padding: 40px 0;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.found{
+    width: 90%;
+}
+
+.found img{
+    border-radius: 10px;
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.veer .found{
+    display: flex;
+    margin: 70px auto;
+    justify-content: space-between;
+}
+
+.spec{
+    width: 90%;
+    margin: 0 auto;
+    padding: 70px 20px 0;
+}
+.spec-1{
+    width: 90%;
+    margin: 0 auto;
+    padding: 70px 0 30px 0;
+}
+.spec h2{
+    font-size:30px;
+}
+.spec p{
+    color: var(--extra-color);
+    font-size: 20px;
+    padding:10px auto;
+}
+.spec-1 h2{
+    font-size:30px;
+}
+.spec-1  p{
+    color: var(--extra-color);
+    font-size: 20px;
+    padding:10px auto;
+}
+.spec,.spec-1{
+    width: 50%;
 }
