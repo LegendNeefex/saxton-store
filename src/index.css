@@ -140,8 +140,9 @@ a{
     font-size: 20px;
     color: var(--extra-color);
 }
-.miniBanCards p{
+.miniBanCards h5{
     font-weight: 700;
+    color: var(--secondary-color);
 }
 .miniBanCards strong{
     color: var(--extra-color);
@@ -151,21 +152,6 @@ a{
     height: 250px;
     margin-top: 10px;
     object-fit: cover;
-}
-.miniBanCards a{
-    position: absolute;
-    right: 20px;
-    bottom: 15px;
-    white-space: nowrap;
-    border: 2px solid var(--default-color);
-    color: var(--default-color);
-    padding: 10px 20px;
-    border-radius: 20px;
-}
-
-.miniBanCards a:hover{
-    color: var(--primary-color);
-    background-color: var(--default-color);
 }
 
 .MoreContent{

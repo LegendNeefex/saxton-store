@@ -14,7 +14,7 @@ function Product() {
             <div className="miniBanCards">
               <img src="./images/hp.jpg" alt="products"/>
               <h4>Men's wear</h4>
-              <p><strong>Type</strong>: quality T-Shirt</p>
+              <h5><strong>Type:</strong> Quality T-shirt</h5>
             </div>
           </div>
           </NavLink>
