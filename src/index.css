@@ -88,7 +88,7 @@ a{
     /* border: 2px solid var(--default-color); */
     right: -25px;
     width: 200px;
-    height: 250px;
+    height: 275px;
 }
 .shortCards ul{
     text-align: center;
@@ -99,6 +99,7 @@ a{
     padding: 0 10px;
 }
 .shortCards  a{
+    padding: 5px 0;
     margin: 5px 0;
     border: 1px solid var(--default-color);
     color: var(--default-color);
