@@ -86,7 +86,8 @@ a{
     border-radius: 10px;
     box-shadow: 0px 4px 8px 0px var(--extra-color);
     /* border: 2px solid var(--default-color); */
-    right: -25px;
+    right: -5px;
+    top: 20px;
     width: 200px;
     height: 275px;
 }
