@@ -29,9 +29,10 @@ a{
 .container{
     background-color: var(--default-color);    
     padding: 10px 0;
-    position: relative;
+    /* position: relative; */
 }
 .container .nav{
+    position: relative;
     display: flex;
     justify-content: space-between;
 }
@@ -78,6 +79,43 @@ a{
     margin-bottom: 5px;
 }
 
+.shortCards{
+    z-index: 10;
+    position: absolute;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 0px var(--extra-color);
+    /* border: 2px solid var(--default-color); */
+    right: -25px;
+    width: 200px;
+    height: 250px;
+}
+.shortCards ul{
+    text-align: center;
+    display: flex;
+    margin: 30px 0;
+    font-weight: 700;
+    flex-direction: column;
+    padding: 0 10px;
+}
+.shortCards  a{
+    margin: 5px 0;
+    border: 1px solid var(--default-color);
+    color: var(--default-color);
+    border-radius: 10px;
+}
+.shortCards a:hover{
+    color: var(--primary-color);
+    background-color: var(--default-color);
+}
+.shortCards .cancel{
+    cursor: pointer;
+    position: absolute;
+    left: 180px;
+    top: -5px;
+    color: #000;
+}
+
 /* content */
 .content{
     margin: 70px 0;
@@ -113,6 +151,7 @@ a{
 /* Products section */
 /*More on products  */
 .banner{
+    position: relative;
     width: 95%;
     margin: 0 auto;
 }
@@ -138,6 +177,7 @@ a{
 }
 
 .banCards{
+    position: relative;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -160,6 +200,7 @@ a{
     color: var(--extra-color);
 }
 .miniBanCards img{
+    position: relative;
     width: 300px;
     height: 250px;
     margin-top: 10px;

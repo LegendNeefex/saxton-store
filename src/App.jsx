@@ -1,5 +1,6 @@
 import Introduction from "./components/Introduction";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ApiProvider } from "./context/stateHandlers";
 import Product from "./components/Pages/Product";
 import Category from "./components/Pages/Category";
 import About from "./components/Pages/AboutUs";
@@ -14,21 +15,23 @@ import Login from "./components/Pages/Login";
 
 function App() {
     return ( 
-        <BrowserRouter>
-            <Introduction />
-            <Routes>
-                <Route path="/" element={<Content />} />
-                <Route path="/products" element={<Product />}/>
-                <Route path="/category" element={<Category />}/>
-                <Route path="/about" element={<About />}/>
-                <Route path="/contact" element={<ContactUs />}/>
-                <Route path="/carts" element={<Carts />}/>
-                <Route path="/CheckOut" element={<CheckOut />}/>
-                <Route path="/payments" element={<Payment />}/>
-                <Route path="/signup" element={<SignUp />}/>
-                <Route path="/login" element={<Login />}/>
-            </Routes>
-        </BrowserRouter>
+       <ApiProvider>
+            <BrowserRouter>
+                <Introduction />
+                <Routes>
+                    <Route path="/" element={<Content />} />
+                    <Route path="/products" element={<Product />}/>
+                    <Route path="/category" element={<Category />}/>
+                    <Route path="/about" element={<About />}/>
+                    <Route path="/contact" element={<ContactUs />}/>
+                    <Route path="/carts" element={<Carts />}/>
+                    <Route path="/CheckOut" element={<CheckOut />}/>
+                    <Route path="/payments" element={<Payment />}/>
+                    <Route path="/signup" element={<SignUp />}/>
+                    <Route path="/login" element={<Login />}/>
+                </Routes>
+            </BrowserRouter>
+       </ApiProvider>
      );
 }
 
