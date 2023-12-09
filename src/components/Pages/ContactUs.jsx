@@ -14,22 +14,22 @@ function ContactUs() {
           <div className="pillar">
             <form action="" method="get" className="pizza">
               <div  className="int_1">
-                <label for="full name">
-                  <input type="text" placeholder="Full name" autocomplete="off" required className="int_2" />
+                <label htmlFor="full name">
+                  <input type="text" placeholder="Full name" autoComplete="off" required className="int_2" />
                 </label>
               </div>
               <div className="int_1">
-                <label for="email">
-                <input type="text" placeholder="Email address" autocomplete="off" required className="int_2" />
+                <label htmlFor="email">
+                <input type="text" placeholder="Email address" autoComplete="off" required className="int_2" />
                 </label>
               </div>
               <div className="int_1">
-                <label for="number">
+                <label htmlFor="number">
                   <input type="text" placeholder="Phone number" required className="int_2" />
                 </label>
               </div>
               <div className="int_1">
-                <label for="Remark">
+                <label htmlFor="Remark">
                   <textarea name="" id="remark" cols="22" rows="10" className="int_2" placeholder="Message"></textarea>
                 </label>
               </div>
@@ -48,7 +48,7 @@ function ContactUs() {
           <div className="yam">
             <img src="images/two.png" alt="" />
             <h3>Ask the community</h3>
-            <p>Explore our community forums and communicate with other saxTon users.</p>
+            <p>Explore our community htmlForums and communicate with other saxTon users.</p>
           </div>
         </div> 
         <div className="boys">

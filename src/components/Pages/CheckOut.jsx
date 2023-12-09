@@ -12,7 +12,7 @@ function CheckOut() {
               <div className="details">
                   <h1>Men's wear</h1>
                   <p>This T-shirt is fairly used and was imported from china.</p>
-                  <NavLink activeClassName="active" to="">Add to cart</NavLink>
+                  <NavLink activeclassname="active" to="">Add to cart</NavLink>
               </div>
           </div>
         </div>

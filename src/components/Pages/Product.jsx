@@ -9,7 +9,7 @@ function Product() {
             <h2>All Products</h2>
           </div>
   
-          <NavLink activeClassName="active" to="/checkout">
+          <NavLink activeclassname="active" to="/checkout">
           <div className="banCards">
             <div className="miniBanCards">
               <img src="./images/hp.jpg" alt="products"/>

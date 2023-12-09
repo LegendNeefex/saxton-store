@@ -64,6 +64,20 @@ a{
     color: aqua;
 }
 
+/* Burgericon */
+.burgericon{
+    /* border: 1px solid var(--primary-color); */
+    padding: 7px 5px 0;
+    width: 45px;
+    border-radius: 5px;
+    display: none;
+}
+.burgericon .line{
+    border-top: 3px solid var(--primary-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
 /* content */
 .content{
     margin: 70px 0;
@@ -140,11 +154,9 @@ a{
     font-size: 20px;
     color: var(--extra-color);
 }
-.miniBanCards h5{
-    font-weight: 700;
-    color: var(--secondary-color);
-}
+
 .miniBanCards strong{
+    font-size: 15px;
     color: var(--extra-color);
 }
 .miniBanCards img{
@@ -153,7 +165,24 @@ a{
     margin-top: 10px;
     object-fit: cover;
 }
+.miniBanCards p{
+    font-size: 15px;
+}
+.miniBanCards a{
+    padding: 7px;
+    border: 2px solid var(--default-color);
+    border-radius: 10px;
+    color: var(--default-color);
+    font-weight: 700;
+    position: absolute;
+    left: 200px;
+    bottom: 10px;
+}
 
+.miniBanCards a:hover{
+    background-color: var(--default-color);
+    color: var(--primary-color);
+}
 .MoreContent{
     display: flex;
     justify-content: space-between;
@@ -238,16 +267,17 @@ a{
 
 .dot a{
     text-decoration:underline;
+    color: #000;
 
 }
-
+/* sign up page */
 .signBody{
     width: 80%;
     margin: 50px auto;
 }
 
 .card input{
-    padding: 10px 0 10px 10px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     margin: 20px 0;
@@ -263,24 +293,20 @@ a{
     padding: 10px 120px;
     white-space: nowrap;
     border-radius: 10px;
-    /* margin-left: 40px; */
     
-}
-.card p{
-    font-size: 12px;
 }
 
 .card form{
     box-shadow: 0px 4px 8px 0px var(--extra-color);
     padding: 30px;
     border-radius: 10px;
-    width: 370px;
+    height: 470px;
 }
 .card{
     display: flex;
     justify-content: space-between;
     position: relative;
-    height: 450px;
+    /* height: 450px; */
 }
 
 .card .textDetails{
@@ -291,6 +317,10 @@ a{
 .card .textDetails h1{
     font-size: 50px;
     color: var(--default-color);
+}
+.card .textDetails h3{
+    font-size: 20px;
+    color: var(--extra-color);
 }
 
 .extra{
@@ -305,16 +335,8 @@ a{
 .extra:hover{
     color: var(--extra-color);
 }
-.secondExtra{
-    position: absolute;
-    bottom: 80px;
-}
-/* Signup footer */
-.signUpFooter{
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-}
+
+
 
 /* Login page */
 .loginCard{
@@ -418,63 +440,81 @@ a{
 /* Cart section */
 .cartContainer{
     display: flex;
+    flex-direction: column;
     width: 90%;
-    margin: 30px auto 114px;
+    margin: 40px auto;
     justify-content: space-between;
 }
-.cartContainer .picSide img{
-    width: 200px;
-    height: 200px;
+.picSide img{
+    width: 100px;
+    height: 50px;
     object-fit: cover;
 }
-.cartContainer .picSide h3{
+.picSide h3{
     font-weight: 700;
-    text-align: center;
-    font-size: 30px;
+    /* text-align: center; */
+    font-size: 20px;
     color: var(--extra-color);
 }
-.cartContainer .textSide, .cartContainer .textSide2{
-    margin-top: 1px;
-    position: relative;
+.cartContainer .textSide{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
-.cartContainer .textSide h2 , .cartContainer .textSide2 h2{
+.cartContainer .textSide h2{
     color: var(--extra-color);
-    text-align: center;
 }
-
+.twoContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 20px auto;
+}
 .cartContainer .textSide h3{
     margin-top: 40px;
     text-align: center;
 }
-.cartContainer .textSide2 input{
-    margin-top: 30px;
-    padding: 10px 0 10px 5px;
+.cartContainer input{
+    /* margin-top: 30px; */
+    padding: 10px 5px;
+    width: 150px;
     border-radius: 10px;
     border: 2px solid var(--extra-color);
 }
+.textSide2{
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    margin: 0 auto;
+}
+.textSide2 h2{
+    color: var(--extra-color);
+    margin: 0 20px;
+}
 
-.cartContainer .textSide2 label input{
+.cartContainer label input{
     pointer-events: none;
 }
-.cartContainer .textSide2 a{
+.cartContainer a{
     background-color: var(--default-color);
     color: var(--primary-color);
     font-size: 700;
-    padding: 10px 90px;
+    padding: 10px;
     border-radius: 20px;
-    position: absolute;
-    right: 250px;
-    bottom:0px;
-    white-space: nowrap;
+    text-align: center;
+    width: 300px;
+    margin: 30px auto;
 }
-.cartContainer .textSide2 a:hover{
+.cartContainer a:hover{
     opacity:0.9;
 }
 
 /* Category Section */
 .categoryContainer{
-    background-color: var(--default-color);
-    color: var(--primary-color);
+    /* background-color: var(--default-color); */
+    /* color: var(--primary-color); */
     padding: 10px;
 }
 
@@ -485,13 +525,15 @@ a{
 
 .category a{
     margin: 0 35px;
-    background-color: var(--primary-color);
+    background-color: var(--default-color);
     padding: 10px;
+    color: var(--primary-color);
     border-radius: 20px;
     border: none;
 }
 
 .categoryContainer h2{
+    color: var(--default-color);
     text-align: center;
     margin-top: 30px;
 }
@@ -508,7 +550,7 @@ a{
     height: 120vh;
 }
 
-.pill h2, p{
+.pill h2{
     font-size: 20px;
 }
 .pill p{
@@ -571,9 +613,9 @@ a{
     padding: 30px 20px;
 }
 
-/* About us picture */
+/* About us section */
 .address{
-    padding: 100px;
+    padding: 100px 0;
     text-align: center;
     width: 65%;
     margin: 0 auto;
@@ -618,7 +660,7 @@ a{
     width: 90%;
 }
 
-.found img{
+.found img, .veer .found img{
     border-radius: 10px;
     width: 350px;
     height: 300px;
@@ -659,4 +701,485 @@ a{
 }
 .spec,.spec-1{
     width: 50%;
+}
+
+/* Introduction responsiveness for mobile */
+@media screen and (max-width: 600px) {
+    .nav li a{
+        display: none;
+    }
+    .container .logo img{
+        height: 50px;
+        width: 140px;
+        object-fit: cover;
+    }
+    .container .nav{
+        display: flex;
+        margin-right:50px;
+        width: 90%;
+    }
+    .container .logo h2{
+        left: 110px;
+        font-size: 20px;
+    }
+    .burgericon{
+        display: block;
+        justify-content: space-around;
+    }
+    .content{
+        width: 90%;
+        margin: 50px auto;
+    }
+    .content h1{
+        font-size: 30px;
+    }
+    .content p{
+        font-size: 15px;
+        width: 90%;
+        padding-bottom: 20px;
+    }
+    .content a{
+        padding: 7px;
+        bottom: 20px;
+        right: 80px;
+    }
+    /* Banner */
+    .banner{
+        width: 90%;
+    }
+    .banner .links a{
+        padding: 7px;
+        font-size: 12px
+    }
+    .banner .links h2{
+        font-size: 15px;
+    }
+    .banCards{
+        width: 90%;
+    }
+    .miniBanCards{
+        margin: 0 auto 20px;
+
+    }
+    .miniBanCards img{
+        height: 200px;
+        width: 250px;
+
+    }
+    .miniBanCards a{
+       left: 150px;
+       font-size: 16px;
+    }
+    .MoreContent{
+        flex-direction: column;
+    }
+    .MoreContent .partOne{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .MoreContent .partOne h1{
+        font-size: 20px;
+    }
+    .MoreContent .partTwo{
+        width: 90%;
+        margin: 40px auto;
+    }
+    .MoreContent .partTwo p{
+        font-size: 20px;
+        text-align: center;
+    }
+    .MoreContent .partTwo a{
+        top: 30px;
+        margin-left: 30px;
+        position: relative;
+    }
+    .containerr .logo, .containerr .logo h2{
+        margin: 20px 80px;
+    }
+    .containerr .logo h2{
+        left: 110px;
+        top: 25px;
+        font-size: 20px;
+    }
+    .containerr .logo img{
+        height: 50px;
+        width: 140px;
+        object-fit: cover;
+    }
+    .containerr .logo p{
+        font-size: 18px;
+    }
+    
+    /* category container */
+    .category{
+        width: 90%;
+        margin: 30px auto;
+        flex-direction: column;
+    }
+    .category a{
+        margin: 10px auto;
+        padding: 10px 50px;
+        font-size: 12px;
+    }
+    /* about us */
+    .address{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .talk h1{
+        width: 90%;
+        margin: 0 auto;
+        font-size: 30px;
+    }
+
+    .our-founding .found{
+        flex-direction: column;
+        width: 90%;
+    }
+    .veer .found{
+        width: 90%;
+        flex-direction: column;
+    }
+    .found img, .veer .found img{
+        width: 250px;
+        height: 200px;
+        margin: 0 auto;
+    }
+    .spec, .spec-1{
+        padding: 10px 0;
+        width: 90%;
+    }
+    .spec h2, .spec-1 h2{
+        font-size: 25px;
+       text-align: center;
+    }
+    .spec p, .spec-1 p{
+        font-size: 15px;
+    }
+    /* contact */
+    .contactContainer{
+        width: 90%;
+        height: 90vh;
+    }
+    .pill{
+        width: 90%;
+    }
+    .pillar{
+        width: 90%;
+    }
+    .pillar .int_2{
+        width: 280px;
+    }
+    .contactContainer .submit{
+        padding: 15px 120px;
+    }
+    .too{
+        width: 90%;
+        flex-direction: column;
+    }
+    /* Checkout section */
+    .prodSection{
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+        
+    }
+    .prodDetails{
+        width: 90%;
+        margin: 0 auto 20vh;
+    }
+    
+    .details{
+        width: 90%;
+        margin: 20px auto;
+        /* text-align: center; */
+    }
+    .details a{
+        position: relative;
+        top: 20px;
+        left: 8px;
+    }
+    /* Sign up page */
+    .signBody{
+        width: 90%;
+        margin:30px auto;
+    }
+    .card{
+        flex-direction: column;
+        width: 90%;
+        margin: 70px auto;
+    }
+    .card .textDetails h1{
+        font-size: 30px;
+    }
+    .card .textDetails{
+        width: 90%;
+        margin: 20px auto;
+        text-align: center;
+        
+    }
+    .card input{
+        width: 250px;
+    }
+    .card form{
+        width: 300px;   
+       height: 450px;
+       margin: 50px auto;
+    }
+    .extra{
+        /* position: relative; */
+        width: 90%;
+        margin: 0 auto;
+        bottom: 230px;
+        text-align: center;
+    }
+    .card .firstExtra{
+        padding: 10px 95px;
+    
+    }
+    /* Login page */
+    .loginCard{
+        width:300px;
+        width: 90%;
+        margin: 100px auto;
+    }
+    .loginCard form{
+        height: 500px;
+    }
+    /* cart page */
+    .cartContainer{
+        margin: 70px auto;
+    }
+    .cartContainer input{
+        width: 65px;
+    }
+    
+    .picSide img{
+        width: 70px;
+        height: 50px;
+    }
+}
+
+/* Introduction responsiveness for tablet */
+@media screen and (min-width:601px) and (max-width:1024px){
+    .nav li a{
+        display: none;
+    }
+    .container .logo img{
+        height: 50px;
+        width: 140px;
+        object-fit: cover;
+    }
+    .container .nav{
+        display: flex;
+        margin-right:50px;
+        width: 90%;
+    }
+    .container .logo h2{
+        left: 110px;
+        font-size: 20px;
+    }
+    .burgericon{
+        display: block;
+        justify-content: space-around;
+    }
+    .content{
+        width: 90%;
+        margin: 50px auto;
+    }
+    .content h1{
+        font-size: 30px;
+    }
+    .content p{
+        font-size: 15px;
+        width: 90%;
+        padding-bottom: 20px;
+    }
+    .content a{
+        position: relative;
+        padding: 7px;
+        bottom: 0px;
+        right: 0px;
+    }
+    .MoreContent .partTwo a{
+        top: 30px;
+        margin-left: 0px;
+        position: relative;
+    }
+    .containerr .logo, .containerr .logo h2{
+        margin: 20px 80px;
+    }
+    .containerr .logo  h2{
+        bottom: 25px;
+        position: relative;
+        left: 100px;
+        font-size: 20px;
+    }
+    .containerr .logo img{
+        position: relative;
+        left: 200px;
+        height: 50px;
+        width: 140px;
+        object-fit: cover;
+    }
+    .containerr .logo p{
+        font-size: 18px;
+    }
+    /* Category page */
+    .category{
+        width: 90%;
+        margin: 30px auto;
+        flex-direction: column;
+    }
+    .category a{
+        margin: 10px auto;
+        padding: 10px 50px;
+        font-size: 12px;
+    }
+    /* About us page */
+    .category{
+        width: 90%;
+        margin: 30px auto;
+        flex-direction: column;
+    }
+    .category a{
+        margin: 10px auto;
+        padding: 10px 50px;
+        font-size: 12px;
+    }
+    /* about us */
+    .address{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .talk h1{
+        width: 90%;
+        margin: 0 auto;
+        font-size: 30px;
+    }
+
+    .our-founding .found{
+        flex-direction: column;
+        width: 90%;
+    }
+    .veer .found{
+        width: 90%;
+        flex-direction: column;
+    }
+    .found img, .veer .found img{
+        width: 450px;
+        height: 300px;
+        margin: 0 auto;
+    }
+    .spec, .spec-1{
+        padding: 10px 0;
+        width: 90%;
+    }
+    .spec h2, .spec-1 h2{
+        font-size: 35px;
+       text-align: center;
+    }
+    .spec p, .spec-1 p{
+        font-size: 25px;
+    }
+    /* contact container */
+    .contactContainer{
+        width: 90%;
+        height: 90vh;
+    }
+    .pill{
+        width: 90%;
+    }
+    .pillar{
+        width: 90%;
+    }
+    .pillar .int_2{
+        width: 480px;
+    }
+    .contactContainer .submit{
+        padding: 15px 220px;
+    }
+    .too{
+        width: 90%;
+        flex-direction: row;
+    }
+    /* checkout section */
+    .prodSection{
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+        
+    }
+    .prodDetails{
+        width: 90%;
+        margin: 0 auto 20vh;
+    }
+    
+    .details{
+        width: 90%;
+        margin: 20px 0;
+        /* text-align: center; */
+    }
+    .details a{
+        position: relative;
+        top: 20px;
+        left: 8px;
+    }
+    /* Sign up page */
+    .signBody{
+        width: 90%;
+        margin:30px auto;
+    }
+    .card{
+        flex-direction: column;
+        width: 90%;
+        margin: 70px auto;
+    }
+    .card .textDetails h1{
+        font-size: 50px;
+    }
+    .card .textDetails{
+        width: 90%;
+        margin: 20px auto;
+        text-align: center;
+    }
+    .card input{
+        width: 450px;
+    }
+    .card form{
+        width: 510px;   
+       height: 450px;
+       margin: 50px auto;
+    }
+    .extra{
+        width: 90%;
+        margin: 0 auto;
+        bottom: 250px;
+        text-align: center;
+    }
+    .card .firstExtra{
+        padding: 10px 195px;
+    
+    }
+    /* log in page */
+    .loginCard{
+        width:300px;
+        width: 90%;
+        margin: 100px auto 170px;
+    }
+    .loginCard form{
+        height: 500px;
+    }
+    /* cart page */
+    .cartContainer{
+        margin: 100px auto 220px;
+    }
+    .cartContainer input{
+        width: 65px;
+    }
+    
+    .picSide img{
+        width: 70px;
+        height: 50px;
+    }
 }

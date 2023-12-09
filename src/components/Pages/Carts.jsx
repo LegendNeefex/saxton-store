@@ -3,30 +3,46 @@
 function Carts() {
   return (
     <>
-    <div className="cartContainer">
-      <div className="picSide">
-        <img src="./images/hp.jpg" alt="ProductImage" />
-        <h3>Men's wear</h3>
-      </div>
+      <div className="cartContainer">
+        <div className="textSide">
+          <h2>Items</h2>
+          <h2>Unit Price</h2>
+          <h2>Quantity</h2>
+        </div>
+      
+        <div className="twoContainer">
+          <div className="picSide">
+            <img src="images/hp.jpg" alt="" />
+            <h3>Men's wear</h3>
+          </div>
+          <h2>25$</h2>
 
-      <div className="textSide">
-        <h2>Unit Price</h2>
-        <h3>25$</h3>
-        <h3>Total</h3>
-      </div>
+          <form method="get">
+            <input type="number" placeholder="Quantity Amount" autoComplete="off"/>
+          </form>
+        </div>
+        <div className="twoContainer">
+          <div className="picSide">
+            <img src="images/hp.jpg" alt="" />
+            <h3>Men's wear</h3>
+          </div>
+          <h2>25$</h2>
 
-      <div className="textSide2">
-        <h2>Quantity</h2>
-        <form method="get">
-          <input type="number" placeholder="Quantity Amount" autoComplete="off"/>
-        </form>
-      <label htmlFor="">
-        <input type="number" autoComplete="off"/>
-      </label>
-      <a href="/">Pay 25$</a>
-    </div>
-    </div>
-    
+          <form method="get">
+            <input type="number" placeholder="Quantity Amount" autoComplete="off"/>
+          </form>
+
+        </div>
+        <div className="textSide2">
+          <h2>Total</h2>
+          <label htmlFor="">
+            <input type="number" autoComplete="off"/>
+          </label>
+        </div>
+        <a href="/">Pay 50$</a>
+      </div>  
+     
+
     <div className="footer">
             <div className="containerr">
                 <div className="nav">
@@ -51,3 +67,7 @@ function Carts() {
 }
 
 export default Carts
+
+
+
+    

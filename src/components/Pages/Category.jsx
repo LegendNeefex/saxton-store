@@ -10,8 +10,8 @@ function Category() {
                     <a href="/">Kitchen Equipments</a>
                     <a href="/">Household Appliance</a>
                     <a href="/">Gaming Accessories</a>
-                    <a href="/">Toys</a>
                     <a href="/">Computers</a>
+                    <a href="/">Toys</a>
                 </div>
             </div>
 
