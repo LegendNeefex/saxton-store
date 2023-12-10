@@ -1,4 +1,5 @@
 import OtherContent from "./OtherContent"
+import { NavLink } from "react-router-dom"
 
 function Content() {
   return (
