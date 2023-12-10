@@ -913,12 +913,16 @@ a{
     .pillar .int_2{
         width: 280px;
     }
+    .pillar .int_1{
+        padding:5px;
+    }
     .contactContainer .submit{
         padding: 15px 120px;
     }
     .too{
         width: 90%;
         flex-direction: column;
+        /* margin-top: 30px; */
     }
     /* Checkout section */
     .prodSection{

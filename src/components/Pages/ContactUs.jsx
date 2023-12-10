@@ -30,7 +30,7 @@ function ContactUs() {
               </div>
               <div className="int_1">
                 <label htmlFor="Remark">
-                  <textarea name="" id="remark" cols="22" rows="10" className="int_2" placeholder="Message"></textarea>
+                  <textarea name="" id="remark" cols="15" rows="5" className="int_2" placeholder="Message"></textarea>
                 </label>
               </div>
               <a href="/" className="submit">Submit</a>
