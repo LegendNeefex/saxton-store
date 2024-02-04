@@ -1,20 +1,23 @@
 import { useContext } from "react";
 import stateHandler from "../context/stateHandlers";
 import { FaTimesCircle } from "react-icons/fa"; 
+import { TiShoppingCart } from "react-icons/ti";
 import { NavLink } from "react-router-dom";
 
 
 function Introduction() {
-    const {burgerIconHandler,burgerIcon,closeHandler} = useContext(stateHandler)
+    const {burgerIconHandler,burgerIcon,closeHandler,cartCount} = useContext(stateHandler)
+    const token = localStorage.getItem("token")
+
     return (
         <>
             <div className="container">
                 <div className="nav">
                     <div className="logo">
-                        <a href="/">
+                        <NavLink activeclassname="active" to="/">
                             <img src="./images/logo.png" alt="Logo" />
                             <h2>SaxTon</h2>
-                        </a>
+                        </NavLink>
                     </div>
                     <ul>
                         <li><NavLink activeclassname="active" to="/">Introduction</NavLink></li>
@@ -22,7 +25,24 @@ function Introduction() {
                         <li><NavLink activeclassname="active" to="/category">Category</NavLink></li>
                         <li><NavLink activeclassname="active" to="/about">About Us</NavLink></li>
                         <li><NavLink activeclassname="active" to="/contact">Contact Us</NavLink></li>
-                        <li><NavLink activeclassname="active" to="/carts">Carts</NavLink></li>
+                        <li><NavLink activeclassname="active" to="/orders">Orders</NavLink></li>
+                        {token ? (
+                        <>
+                            <li><NavLink activeclassname="active" to="/logout">Logout</NavLink></li>
+                            <li><NavLink activeclassname="active" to="/profile">Profile</NavLink></li>
+                        </>
+                        ) : (
+                        <>
+                            <li><NavLink activeclassname="active" to="/login">Login</NavLink></li>
+                            <li><NavLink activeclassname="active" to="/signup">Register</NavLink></li>  
+                        </>
+                        )}
+                        <>
+                            <li><NavLink activeclassname="active" to="/carts">
+                                <TiShoppingCart size={"35px"}/>
+                            </NavLink></li>
+                            <div className="cartCount">{cartCount}</div>
+                        </>
                     </ul>
                 {
                     burgerIcon 
@@ -31,11 +51,26 @@ function Introduction() {
                         <div className="shortCards">
                             <FaTimesCircle size={"25px"} className="cancel" onClick={closeHandler}/>
                             <ul>
-                                <a href="/products">products</a>
-                                <a href="/category">category</a>
-                                <a href="/about">about us</a>
-                                <a href="/contact">contact us</a>
-                                <a href="/signup">create an account</a>
+                                <NavLink activeclassname="active" to="/products">products</NavLink>
+                                <NavLink activeclassname="active" to="/category">category</NavLink>
+                                <NavLink activeclassname="active" to="/about">about us</NavLink>
+                                <NavLink activeclassname="active" to="/contact">contact us</NavLink>
+                                <NavLink activeclassname="active" to="/signup">create an account</NavLink>
+                                <NavLink activeclassname="active" to="/orders">Orders</NavLink>
+                                {token ? (
+                                <>
+                                    <NavLink activeclassname="active" to="/logout">Logout</NavLink>
+                                    <NavLink activeclassname="active" to="/profile">Profile</NavLink>
+                                </>
+                                ) : (
+                                <>
+                                    <NavLink activeclassname="active" to="/login">Login</NavLink>
+                                    <NavLink activeclassname="active" to="/signup">Register</NavLink>  
+                                </>
+                                )}
+                                <NavLink activeclassname="active" to="/carts" className="cart">
+                                    <TiShoppingCart size={"35px"}/>
+                                </NavLink>
             
                             </ul>
                         </div>

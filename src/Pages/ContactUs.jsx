@@ -1,4 +1,4 @@
-import OtherContent from "../OtherContent"
+import OtherContent from "../components/OtherContent";
 
 function ContactUs() {
   return (

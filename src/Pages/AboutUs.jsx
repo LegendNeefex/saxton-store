@@ -1,14 +1,15 @@
-import OtherContent from "../OtherContent";
+import { NavLink } from "react-router-dom";
+import OtherContent from "../components/OtherContent";
 
 function About() {
     return ( 
         <>
-            <div classNameName="aboutContainer">
+            <div className="aboutContainer">
                 <div className="address">
                     <div className="talk">
                     <h1>Our mission is to make shopping so easier for everyone.</h1>
                     <p>SaxTon was built on the idea of great quality. Use our interactive website and order our valuable items and products, or support us by giving reviews on Saxton.</p>
-                    <a href="/">Read our story</a>
+                    <NavLink activeclassname="Active" to="">Read our story</NavLink>
                 </div>
             </div>
             <div className="our-founding">
