@@ -13,13 +13,13 @@ function SignUp() {
         e.preventDefault();
 
         const userData = {
-            firstName: text.firstName,
-            lastName: text.lastName,
-            email: text.email,
-            mobileNumber: text.mobileNumber,
-            country: text.country,
-            password: text.password,
-            username: text.username
+            "firstName": text.firstName,
+            "lastName": text.lastName,
+            "email": text.email,
+            "mobileNumber": text.mobileNumber,
+            "country": text.country,
+            "password": text.password,
+            "username": text.username
 
         }
 

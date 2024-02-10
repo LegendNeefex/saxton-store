@@ -22,8 +22,8 @@ function Login() {
     
 
     const userAuth = {
-        email: loginText.email,
-        password: loginText.password
+        "email": loginText.email,
+        "password": loginText.password
     }
 
     const loginHandler = async (e) =>{
