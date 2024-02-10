@@ -114,7 +114,6 @@ export const ApiProvider = (({children})=>{
             // Updating the state with the order
             setOrder([orderDataWithId, ...order]);
 
-        
             // Creating OrderItems
             const orderItemResponse = await fetch(`${apiURL}/orderItems`, {
                 method: "POST",
@@ -154,8 +153,8 @@ export const ApiProvider = (({children})=>{
 
     //fetch all categories
     const cateFetcher = (async(req,res)=>{
-        const apiURL = process.env.REACT_APP_API_URL
-        const msg = await fetch(`${apiURL}/categories`)
+        // const apiURL = process.env.REACT_APP_API_URL
+        const msg = await fetch(`https://api.saxton.store/categories`)
 
         const sentBack = await msg.json() 
         setCatData(sentBack)
@@ -266,9 +265,9 @@ export const ApiProvider = (({children})=>{
 
     useEffect (()=>{
         const dataFecther = async(req, res)=>{
-            const apiURL = process.env.REACT_APP_API_URL
+            // const apiURL = process.env.REACT_APP_API_URL
             try{
-                const response = await fetch(`${apiURL}/products`)
+                const response = await fetch(`https://api.saxton.store/products`)
     
                 const data = await response.json();
     

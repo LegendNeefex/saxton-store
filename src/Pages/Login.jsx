@@ -30,7 +30,8 @@ function Login() {
         const apiURL = process.env.REACT_APP_API_URL
         console.log(`${apiURL}/auths`);
         e.preventDefault();
-        const response = await fetch(`${apiURL}/auths`,{
+
+        const response = await fetch(`https://api.saxton.store/auths`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
