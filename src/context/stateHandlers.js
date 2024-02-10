@@ -35,10 +35,12 @@ export const ApiProvider = (({children})=>{
     useEffect(()=>{
         userFetcher();
         orderFetcher();
+
     },[])
 
     const userFetcher = async ()=>{
-        const response = await fetch ("http://localhost:5000/users")
+        const apiURL = process.env.REACT_APP_API_URL
+        const response = await fetch (`${apiURL}/users`)
         
         const data = await response.json();
         
@@ -46,7 +48,8 @@ export const ApiProvider = (({children})=>{
     }
 
     const createUser = async (userData)=>{
-        const response = await fetch ("http://localhost:5000/users",{
+        const apiURL = process.env.REACT_APP_API_URL
+        const response = await fetch (`${apiURL}/users`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -74,7 +77,8 @@ export const ApiProvider = (({children})=>{
     //getting all orders
     const orderFetcher = async ()=>{
         const token = localStorage.getItem("token");
-        const response = await fetch ("http://localhost:5000/orders/user",{
+        const apiURL = process.env.REACT_APP_API_URL
+        const response = await fetch (`${apiURL}/orders/user`,{
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,
@@ -89,11 +93,12 @@ export const ApiProvider = (({children})=>{
     //creating order and making payment
     const createOrder = async (orderData) => {
         const token = localStorage.getItem("token");
+        const apiURL = process.env.REACT_APP_API_URL
         try {
             setShowOrder(true)
             
             // Creating the order
-            const orderResponse = await fetch("http://localhost:5000/orders", {
+            const orderResponse = await fetch(`${apiURL}/orders`, {
                 method: "POST",
                 headers: {
                 "Content-Type": "application/json",
@@ -111,7 +116,7 @@ export const ApiProvider = (({children})=>{
 
         
             // Creating OrderItems
-            const orderItemResponse = await fetch("http://localhost:5000/orderItems", {
+            const orderItemResponse = await fetch(`${apiURL}/orderItems`, {
                 method: "POST",
                 headers: {
                 "Content-Type": "application/json",
@@ -125,7 +130,7 @@ export const ApiProvider = (({children})=>{
 
 
             //make payment with paystack
-            const payStackPayment = await fetch("http://localhost:5000/orders/payments", {
+            const payStackPayment = await fetch(`${apiURL}/orders/payments`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -149,7 +154,8 @@ export const ApiProvider = (({children})=>{
 
     //fetch all categories
     const cateFetcher = (async(req,res)=>{
-        const msg = await fetch("http://localhost:5000/categories")
+        const apiURL = process.env.REACT_APP_API_URL
+        const msg = await fetch(`${apiURL}/categories`)
 
         const sentBack = await msg.json() 
         setCatData(sentBack)
@@ -260,8 +266,10 @@ export const ApiProvider = (({children})=>{
 
     useEffect (()=>{
         const dataFecther = async(req, res)=>{
+            const apiURL = process.env.REACT_APP_API_URL
+            console.log(apiURL);
             try{
-                const response = await fetch("http://localhost:5000/products")
+                const response = await fetch(`${apiURL}/products`)
     
                 const data = await response.json();
     

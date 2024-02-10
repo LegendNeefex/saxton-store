@@ -10,7 +10,8 @@ function CategoryDetail() {
     
     //get one category data
     const catFetcher = async(req, res)=>{
-        const response = await fetch(`http://localhost:5000/categories/${search.id}`)
+        const apiURL = process.env.REACT_APP_API_URL
+        const response = await fetch(`${apiURL}/categories/${search.id}`)
         const ans = await response.json();
 
         setData(ans)

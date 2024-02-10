@@ -34,7 +34,8 @@ function OrderItems() {
         async function orderItemsFetcher() {
         //fetch orderitems from the backend
         const token = localStorage.getItem("token");
-        const response = await fetch(`http://localhost:5000/orderItems/user/${search.id}`,{
+        const apiURL = process.env.REACT_APP_API_URL
+        const response = await fetch(`${apiURL}/orderItems/user/${search.id}`,{
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,
@@ -47,7 +48,8 @@ function OrderItems() {
     //getting all orderItems
      const gettingorderFetcher = async ()=>{
         const token = localStorage.getItem("token");
-        const response = await fetch (`http://localhost:5000/orderItems/${search.id}`,{
+        const apiURL = process.env.REACT_APP_API_URL
+        const response = await fetch (`${apiURL}/orderItems/${search.id}`,{
             headers: { 
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,

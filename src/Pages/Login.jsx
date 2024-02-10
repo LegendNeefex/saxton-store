@@ -27,8 +27,9 @@ function Login() {
     }
 
     const loginHandler = async (e) =>{
+        const apiURL = process.env.REACT_APP_API_URL
         e.preventDefault();
-        const response = await fetch(`http://localhost:5000/auths`,{
+        const response = await fetch(`${apiURL}/auths`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

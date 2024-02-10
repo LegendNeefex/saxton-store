@@ -1,7 +1,6 @@
 import Introduction from "./components/Introduction";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ApiProvider } from "./context/stateHandlers";
-import Payment from "./Pages/Payment";
 import CategoryDetail from "./Pages/CategoryDetail";
 import Login from "./Pages/Login"
 import Content from "./components/Content";
@@ -32,7 +31,6 @@ function App() {
                     <Route path="/carts" element={<Carts />}/>
                     <Route path="/products/:id" element={<ProductDetail/>}/>
                     <Route path="/category/:id" element={<CategoryDetail/>}/>
-                    <Route path="/payments" element={<Payment />}/>
                     <Route path="/checkout" element={<CheckOut />}/>
                     <Route path="/signup" element={<SignUp />}/>
                     <Route path="/login" element={<Login />}/>

@@ -7,8 +7,9 @@ function FeaturedProduct() {
 
     useEffect (()=>{
         const dataFecther = async(req, res)=>{
+            const apiURL = process.env.REACT_APP_API_URL
             try{
-                const response = await fetch("http://localhost:5000/featuredProducts")
+                const response = await fetch(`${apiURL}/featuredProducts`)
     
                 const data = await response.json();
                 setProd(data)

@@ -6,11 +6,10 @@ import { HashLoader, RingLoader } from "react-spinners";
 import { MdOutlineDoneOutline } from "react-icons/md";
 
 function Order() {
-    const { showOrder, order, emptyOrder } = useContext(stateHandler);
+    const { showOrder, order, emptyOrder} = useContext(stateHandler);
     const navigate = useNavigate();
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (!token) {

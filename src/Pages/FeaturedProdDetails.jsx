@@ -11,8 +11,9 @@ function FeaturedProdDetails() {
 
   useEffect (()=>{
       const apiFetcher = async(req, res)=>{
+        const apiURL = process.env.REACT_APP_API_URL
           try{
-              const response = await fetch(`http://localhost:5000/featuredProducts/${search.id}`)
+              const response = await fetch(`${apiURL}/featuredProducts/${search.id}`)
 
               const ans = await response.json();
 
