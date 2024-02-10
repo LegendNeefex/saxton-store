@@ -28,6 +28,8 @@ function Login() {
 
     const loginHandler = async (e) =>{
         const apiURL = process.env.REACT_APP_API_URL
+
+
         console.log(`${apiURL}/auths`);
         e.preventDefault();
 
