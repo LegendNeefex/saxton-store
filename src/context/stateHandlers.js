@@ -267,7 +267,6 @@ export const ApiProvider = (({children})=>{
     useEffect (()=>{
         const dataFecther = async(req, res)=>{
             const apiURL = process.env.REACT_APP_API_URL
-            console.log(apiURL);
             try{
                 const response = await fetch(`${apiURL}/products`)
     
