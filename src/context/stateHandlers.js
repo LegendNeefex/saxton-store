@@ -274,7 +274,7 @@ export const ApiProvider = (({children})=>{
     
                 setReceivedData(data)
             }catch(error){
-                console.log(error);
+                return ("error",error)
             }
         }
         dataFecther();
