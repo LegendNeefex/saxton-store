@@ -31,7 +31,7 @@ function Login() {
         console.log(`${apiURL}/auths`);
         e.preventDefault();
 
-        const response = await fetch(`https://api.saxton.store/auths`,{
+        const response = await fetch(`${apiURL}/auths`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
