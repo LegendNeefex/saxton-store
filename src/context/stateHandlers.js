@@ -121,7 +121,9 @@ export const ApiProvider = (({children})=>{
             const orderId = orderDataWithId.id;
         
             // Updating the state with the order
-            setOrder([orderDataWithId, ...order]);
+            setTimeout(() => {
+                setOrder([orderDataWithId, ...order]);
+            }, 3000);
 
         
             // Creating OrderItems
@@ -151,12 +153,13 @@ export const ApiProvider = (({children})=>{
             });
             const getBack = await payStackPayment.json();
             console.log(getBack.data.authorization_url);
+
             setTimeout(() => {
                 window.location.href = getBack.data.authorization_url;
             }, 3000);
 
         } catch (error) {
-        console.error("Error creating order and order item:", error);
+            console.error("Error creating order and order item:", error);
         }
     };
   
