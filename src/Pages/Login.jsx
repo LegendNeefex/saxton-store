@@ -5,7 +5,7 @@ import { NavLink,useNavigate } from "react-router-dom";
 
 function Login() {
     const navigate = useNavigate();
-    const {pwdHandler,pwdShow,loginMsg,setLoginMsg,updateAuth,cartShow} = useContext(stateHandler)
+    const {pwdHandler,pwdShow,loginMsg,setLoginMsg,setView,cartShow} = useContext(stateHandler)
     const [loginText,setLoginText] = useState({
         email:"",
         password:""
@@ -26,7 +26,7 @@ function Login() {
         "password": loginText.password
     }
 
-    const loginHandler = async (e) =>{
+    const loginHandler = async (e) =>{ 
         const apiURL = process.env.REACT_APP_API_URL
 
 
@@ -55,7 +55,7 @@ function Login() {
                 navigate("/carts");
             }else{
                 navigate("/");
-                updateAuth(true)
+                setView(true)
             }
         } else {
             setLoginMsg("Invalid Credentials");

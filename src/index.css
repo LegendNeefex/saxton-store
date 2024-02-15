@@ -176,31 +176,104 @@ a{
     background-color: var(--primary-color);
 }
 
-.intro-about-us{
-    position: relative;
-    background-color: var(--some-backgrounds);
+/* Container for the featured brands section */
+.featured-brands-container {
+    margin-top: 40px;
+  }
+  
+  /* Title for the section */
+  .section-title {
+    font-size: 24px;
+    font-weight: 700;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  
+  /* Container for the brand cards */
+  .brand-cards {
+    display: flex;
+    width: 65%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Individual brand card */
+  .brand-card {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.intro-details {
-    width: 95%;
-    height: 35vh;
-    margin: 20px auto;
-    padding: 20px;
+
+.brand-card img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover effect on brand card */
+  .brand-card:hover img {
+    transform: scale(1.1);
+  }
+  
+/* Container for product categories on homepage */
+/* Container for product categories */
+.categories-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
 }
-.intro-details a{
-    border: 2px solid var(--extra-color);
-    padding: 10px;
-    color: var(--extra-color);
-    border-radius: 10px;
-    position: absolute;
-    top: 140px;
+
+/* Section title */
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
 }
-.intro-details a:hover{
-    transform: scale(0.98);
-    opacity: 0.9;
+
+/* Grid layout for categories */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
 }
-.intro-details p{
-    color: var(--extra-color);
-}
+
+/* Individual category card */
+.category-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  /* Hover effect */
+    .category-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .category-name {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+        text-decoration: none;
+    }
+
+
 
 /* Products section */
 /*More on products  */
@@ -231,20 +304,24 @@ a{
 }
 
 .banCards{
-    width: 95%;
-    position: relative;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    width: 95%;
     margin: 0 auto;
-}
-.miniBanCards{
-    box-shadow: 0px 4px 8px 0px var(--extra-color);
-    padding: 20px;
+    flex-wrap: wrap;
     position: relative;
-    margin: 20px auto;
-    width:400px;
+    justify-content: space-between;
 }
+
+.miniBanCards {
+    padding: 20px;
+    position: relative; 
+    width:400px;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .miniBanCards h4{
     font-size: 20px;
     color: var(--extra-color);
@@ -264,7 +341,13 @@ a{
     height: 350px;
     margin-top: 10px;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
+
+.miniBanCards:hover img {
+    transform: scale(0.9);
+}
+
 .miniBanCards p{
     font-size: 15px;
 }
@@ -328,6 +411,7 @@ a{
     background-color: var(--primary-color);
     color: var(--default-color);
 }
+
 
 
 /* footer section */
@@ -603,9 +687,11 @@ a{
 }
 
 .images img{
-    height: 350px;
-    width: 400px;
     object-fit: cover;
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .details{
@@ -784,39 +870,7 @@ a{
     position: relative;
     top: 15px;
 }
-/* Category Section */
-.categoryContainer{
-    /* background-color: var(--default-color); */
-    /* color: var(--primary-color); */
-    padding: 10px;
-}
 
-.category{
-    display: flex;
-}
-.category li{
-    margin: 30px 0 10px;
-}
-
-.category a{
-    margin: 0 25px;
-    background-color: var(--default-color);
-    padding: 10px 30px;
-    color: var(--primary-color);
-    border-radius: 20px;
-    border: none;
-}
-
-.categoryContainer h2{
-    color: var(--default-color);
-    text-align: center;
-    margin-top: 30px;
-}
-
-.category a:hover{
-    transform: scale(0.9);
-    opacity: 0.9;
-}
 
 /* category details */
 .catDetails{
@@ -1271,387 +1325,444 @@ a{
         font-weight: 700;
     }
 
-/* Introduction responsiveness for mobile */
-@media screen and (max-width: 600px) {
-    .nav li a{
-        display: none;
-    }
-    .container .logo img{
-        height: 50px;
-        width: 140px;
-        object-fit: cover;
-    }
-    .container .nav{
-        display: flex;
-        margin-right:50px;
-        width: 90%;
-    }
-    .container .logo h2{
-        left: 110px;
-        font-size: 20px;
-    }
-    .burgericon{
-        display: block;
-        justify-content: space-around;
-    }
-    .cartCount{
-        display: none;
-    }
-    .intro-details {
-        height: 30vh;
-    }
-    .intro-details p{
-        font-size: 15px;
-    }
-    .intro-details a{
-        top: 190px;
-    }
-    .content{
-        width: 90%;
-        margin: 50px auto;
-    }
-    .content h1{
-        font-size: 30px;
-    }
-    .content p{
-        font-size: 15px;
-        width: 90%;
-        padding-bottom: 20px;
-    }
-    .content a{
+    /* profile page */
+
+    .profile-container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .profile-header {
+        text-align: center;
+        margin-bottom: 20px;
         position: relative;
-        padding: 7px;
-        bottom: 0px;
-        right: 0px;
-    }
-    /* Banner */
-    .banner{
-        width: 90%;
-    }
-    .banner .links a{
-        padding: 7px;
-        font-size: 12px
-    }
-    .banner .links h2{
-        font-size: 15px;
-    }
-    .banCards{
-        width: 90%;
-    }
-    .miniBanCards{
-        margin: 0 auto 20px;
-        width: 300px;
+      }
 
-    }
-    .miniBanCards img{
-        height: 200px;
-        width: 250px;
-        object-fit: cover;
-
-    }
-    .miniBanCards a{
-       left: 150px;
-       font-size: 16px;
-    }
-    .prodDetails h3{
-        text-align: center;
-    }
-    .images img{
-        height: 200px;
-        width: 300px;
-        object-fit: cover;
-    }
-    .details{
-        text-align: center;
-    }
-    .MoreContent{
-        flex-direction: column;
-    }
-    .MoreContent .partOne{
-        width: 90%;
-        margin: 0 auto;
-    }
-    .MoreContent .partOne h1{
-        font-size: 20px;
-    }
-    .MoreContent .partTwo{
-        width: 90%;
-        margin: 40px auto;
-    }
-    .MoreContent .partTwo p{
-        font-size: 20px;
-        text-align: center;
-    }
-    .MoreContent .partTwo a{
-        top: 30px;
-        margin-left: 30px;
+      .profile-header a{
+        background-color: #666;
+        color: var(--primary-color);
+        padding: 10px;
+        margin:10px;
+        border-radius: 10px;
+        font-weight: 700;
         position: relative;
-    }
-    .containerr .logo, .containerr .logo h2{
-        margin: 20px 80px;
-    }
-    .containerr .logo h2{
-        left: 110px;
-        top: 25px;
-        font-size: 20px;
-    }
-    .containerr .logo img{
-        height: 50px;
-        width: 140px;
+        top: 15px;
+      }
+
+      .profile-header a:hover{
+        transform: scale(0.8);
+        opacity: 0.9;
+      }
+      
+      .profile-avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        overflow: hidden;
         object-fit: cover;
-    }
-    .containerr .logo p{
-        font-size: 18px;
-    }
-    
-    /* category container */
-    .category{
-        width: 90%;
-        margin: 30px auto;
-        flex-direction: column;
-    }
-    .category a{
-        margin: 10px auto;
-        padding: 10px 50px;
-        font-size: 12px;
-    }
-    /* about us */
-    .address{
-        width: 90%;
-        margin: 0 auto;
-    }
-    .talk h1{
-        width: 90%;
-        margin: 0 auto;
-        font-size: 30px;
-    }
+        margin-bottom: 10px;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
 
-    .our-founding .found{
-        flex-direction: column;
-        width: 90%;
-    }
-    .veer .found{
-        width: 90%;
-        flex-direction: column;
-    }
-    .found img, .veer .found img{
-        width: 250px;
-        height: 200px;
-        margin: 0 auto;
-    }
-    .spec, .spec-1{
-        padding: 10px 0;
-        width: 90%;
-    }
-    .spec h2, .spec-1 h2{
-        font-size: 25px;
-       text-align: center;
-    }
-    .spec p, .spec-1 p{
+      .profile-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .profile-avatar:hover {
+        transform: scale(1.1);
+      }
+
+      .profile-name {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .profile-email {
+        color: #666;
+      }
+      .profile-details {
+        margin-top: 40px;
+      }
+      .profile-details h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .profile-details p {
+        margin: 0px;
         font-size: 15px;
-    }
-    /* contact */
-    .contactContainer{
-        width: 90%;
-        height: 90vh;
-    }
-    .pill{
-        width: 90%;
-    }
-    .pillar{
-        width: 90%;
-    }
-    .pillar .int_2{
-        width: 280px;
-    }
-    .pillar .int_1{
-        padding:5px;
-    }
-    .contactContainer .submit{
-        padding: 15px 120px;
-    }
-    .too{
-        width: 90%;
-        flex-direction: column;
-        /* margin-top: 30px; */
-    }
-    /* Checkout section */
-    .prodSection{
-        flex-direction: column;
-        width: 90%;
-        margin: 0 auto;
-        
-    }
-    .prodDetails{
-        width: 90%;
-        margin: 0 auto 20vh;
-    }
-    
-    .details{
-        width: 90%;
-        margin: 20px auto;
-        /* text-align: center; */
-    }
-    .details a{
-        position: relative;
-        top: 20px;
-        left: 8px;
-    }
-    /* Sign up page */
-    .signBody{
-        width: 90%;
-        margin: 30px auto;
-    }
-    .card{
-        flex-direction: column;
-        width: 90%;
-        margin: 0 auto;
-    }
-    .card .textDetails h1{
-        font-size: 30px;
-    }
-    .card .textDetails{
-        width: 90%;
-        margin: 20px auto;
-        text-align: center;
-        
-    }
-    .card input{
-        width: 250px;
-    }
-    .card form{
-        width: 300px;   
-       height: 670px;
-       margin: 50px auto;
-    }
-    .card button{
-        padding: 10px 0;
-        width: 240px;
-        text-align: center;
-    }
-    .countryContainer .country{
-        width: 250px;
-    }
-    .eye{
-        right: 40px;
-        bottom: 385px; 
-    }
-    
-    .extra{
-        /* position: relative; */
-        width: 90%;
-        margin: 0 auto;
-        bottom: 230px;
-        text-align: center;
-    }
-    .card .firstExtra{
-        padding: 10px 95px;
-    }
+      }
 
-    /* order page */
-    .orderDetailsCon ul{
-        flex-direction: column;
-        margin: 10px auto;
-    }
-    .orderDetailsCon li{
-        font-size: 14px;
-    }
 
-    /* logout page*/
-    .logoutContainer{
-        width: 90%;
-        margin: 0 auto;
-    }
-    .logoutContainer .btn{
-        width: 100%;
-        flex-direction: column;
-        white-space: nowrap;
-    }
-    .logoutContainer .out{
-        padding: 20px 0;
-        width: 100%;
-        margin: 10px 0;
-    }
 
-    /* OrderItems */
-    .order-items-container{
-        flex-direction: column;
+/* Add this media query at the end of your CSS file */
+@media screen and (max-width: 500px) {
+        .nav li a {
+            display: none;
+        }
+        .container .logo img {
+            height: 50px;
+            width: 140px;
+            object-fit: cover;
+        }
+        .container .nav {
+            display: flex;
+            margin-right: 50px;
+            width: 90%;
+        }
+        .container .logo h2 {
+            left: 110px;
+            font-size: 20px;
+        }
+        .burgericon {
+            display: block;
+            justify-content: space-around;
+        }
+        .cartCount {
+            display: none;
+        }
+        .content {
+            width: 90%;
+            margin: 50px auto;
+        }
+        .content h1 {
+            font-size: 30px;
+        }
+        .content p {
+            font-size: 15px;
+            width: 90%;
+            padding-bottom: 20px;
+        }
+        .content a {
+            position: relative;
+            padding: 7px;
+            bottom: 0px;
+            right: 0px;
+        }
+        /* Banner */
+        .banner {
+            width: 90%;
+        }
+        .banner .links a {
+            padding: 7px;
+            font-size: 12px;
+        }
+        .banner .links h2 {
+            font-size: 15px;
+        }
+        .banCards {
+            width: 90%;
+        }
+        .miniBanCards {
+            margin: 0 auto 20px;
+            width: 300px;
+        }
+        .miniBanCards img {
+            height: 200px;
+            width: 250px;
+            object-fit: cover;
+        }
+        .miniBanCards a {
+            left: 150px;
+            font-size: 16px;
+        }
+        .prodDetails h3 {
+            text-align: center;
+        }
+        .images img {
+            height: 200px;
+            width: 300px;
+            object-fit: cover;
+        }
+        .details {
+            text-align: center;
+        }
+        .MoreContent {
+            flex-direction: column;
+        }
+        .MoreContent .partOne {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .MoreContent .partOne h1 {
+            font-size: 20px;
+        }
+        .MoreContent .partTwo {
+            width: 90%;
+            margin: 40px auto;
+        }
+        .MoreContent .partTwo p {
+            font-size: 20px;
+            text-align: center;
+        }
+        .MoreContent .partTwo a {
+            top: 30px;
+            margin-left: 30px;
+            position: relative;
+        }
+        .containerr .logo,
+        .containerr .logo h2 {
+            margin: 20px 80px;
+        }
+        .containerr .logo h2 {
+            left: 110px;
+            top: 25px;
+            font-size: 20px;
+        }
+        .containerr .logo img {
+            height: 50px;
+            width: 140px;
+            object-fit: cover;
+        }
+        .containerr .logo p {
+            font-size: 18px;
+        }
+        /* category container */
+        .category {
+            width: 90%;
+            margin: 30px auto;
+            flex-direction: column;
+        }
+        .category a {
+            margin: 10px auto;
+            padding: 10px 50px;
+            font-size: 12px;
+        }
+        /* about us */
+        .address {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .talk h1 {
+            width: 90%;
+            margin: 0 auto;
+            font-size: 30px;
+        }
+        .our-founding .found {
+            flex-direction: column;
+            width: 90%;
+        }
+        .veer .found {
+            width: 90%;
+            flex-direction: column;
+        }
+        .found img,
+        .veer .found img {
+            width: 250px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        .spec,
+        .spec-1 {
+            padding: 10px 0;
+            width: 90%;
+        }
+        .spec h2,
+        .spec-1 h2 {
+            font-size: 25px;
+            text-align: center;
+        }
+        .spec p,
+        .spec-1 p {
+            font-size: 15px;
+        }
+        /* contact */
+        .contactContainer {
+            width: 90%;
+            height: 90vh;
+        }
+        .pill {
+            width: 90%;
+        }
+        .pillar {
+            width: 90%;
+        }
+        .pillar .int_2 {
+            width: 280px;
+        }
+        .pillar .int_1 {
+            padding: 5px;
+        }
+        .contactContainer .submit {
+            padding: 15px 120px;
+        }
+        .too {
+            width: 90%;
+            flex-direction: column;
+        }
+        /* Checkout section */
+        .prodSection {
+            flex-direction: column;
+            width: 90%;
+            margin: 0 auto;
+        }
+        .prodDetails {
+            width: 90%;
+            margin: 0 auto 20vh;
+        }
+        .details {
+            width: 90%;
+            margin: 20px auto;
+        }
+        .details a {
+            position: relative;
+            top: 20px;
+            left: 8px;
+        }
+        /* Sign up page */
+        .signBody {
+            width: 90%;
+            margin: 30px auto;
+        }
+        .card {
+            flex-direction: column;
+            width: 90%;
+            margin: 0 auto;
+        }
+        .card .textDetails h1 {
+            font-size: 30px;
+        }
+        .card .textDetails {
+            width: 90%;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .card input {
+            width: 250px;
+        }
+        .card form {
+            width: 90%;
+            height: auto;
+            margin: 50px auto;
+        }
+        .card button {
+            padding: 10px 0;
+            width: 240px;
+            text-align: center;
+        }
+        .countryContainer .country {
+            width: 250px;
+        }
+        .eye {
+            right: 40px;
+            bottom: 385px;
+        }
+        .extra {
+            width: 90%;
+            margin: 0 auto;
+            bottom: 230px;
+            text-align: center;
+        }
+        .card .firstExtra {
+            padding: 10px 95px;
+        }
+        /* order page */
+        .orderDetailsCon ul {
+            flex-direction: column;
+            margin: 10px auto;
+        }
+        .orderDetailsCon li {
+            font-size: 14px;
+        }
+        /* logout page*/
+        .logoutContainer {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .logoutContainer .btn {
+            width: 100%;
+            flex-direction: column;
+            white-space: nowrap;
+        }
+        .logoutContainer .out {
+            padding: 20px 0;
+            width: 100%;
+            margin: 10px 0;
+        }
+        /* OrderItems */
+        .order-items-container {
+            flex-direction: column;
+        }
+        .partA .customer-details,
+        .partA .shipping-method,
+        .partA .paymentmethod,
+        .partA .itemsOrdered {
+            width: 350px;
+            margin: 20px auto;
+        }
+        .partA .customer-details .flexcustomer {
+            flex-direction: column;
+        }
+        .partB {
+            width: 350px;
+            margin: 0 auto;
+        }
+        .cartContainer {
+            flex-direction: column;
+        }
+        .cartContainer .section1 {
+            width: 100%;
+        }
+        .sec2Con a {
+            text-align: center;
+            padding: 10px 120px;
+        }
+        .cartContainer .secConSales {
+            margin-left: 0px;
+        }
+        .checkout-container {
+            width: 90%;
+        }
+        .checkout-section form {
+            flex-direction: column;
+        }
+        .cart-prev-container {
+            width: 90%;
+            margin-left: 20px;
+            padding-top: 10px;
+        }
+        .cart-prev-container .secConSales {
+            margin-left: 0px;
+        }
+        button {
+            margin-left: -10px;
+            text-align: center;
+            width: 300px;
+        }
+        /* category details */
+        .catItems {
+            margin: 20px auto;
+        }
+        /* Login page */
+        .loginCard {
+            width: 300px;
+            width: 90%;
+            margin: 100px auto;
+        }
+        .loginCard form {
+            height: 500px;
+        }
+        .loginCard form button {
+            width: 290px;
+            margin: 10px auto;
+        }
+        /* cart page */
+        .cartContainer {
+            margin: 70px auto;
+        }
+        .cartContainer input {
+            width: 65px;
+        }
+        .picSide img {
+            width: 70px;
+            height: 50px;
+        }
     }
-    .partA .customer-details, .partA .shipping-method, .partA .paymentmethod, .partA .itemsOrdered{
-        width: 350px;
-        margin: 20px auto;
-    }
-    .partA .customer-details .flexcustomer{
-        flex-direction: column;
-    }
-    .partB{
-        width: 350px;
-        margin: 0px auto;
-    }
-    .cartContainer{
-        flex-direction: column;
-    }
-    .cartContainer .section1{
-        width: 100%;
-    }
-    .sec2Con a{
-        text-align: center;
-        padding: 10px 120px; 
-    }
-    .cartContainer .secConSales{
-        margin-left: 0px;
-    }
-    .checkout-container{
-        width: 90%;
-    }
-    .checkout-section form{
-        flex-direction: column;
-    }
-    .cart-prev-container{
-        width:90%;
-        margin-left: 20px;
-        padding-top: 10px;
-    }
-    .cart-prev-container .secConSales{
-        margin-left: 0px;
-    }
-    button {
-        margin-left: -10px;
-        text-align: center;
-        width: 300px; 
-    }
-
-    /* category details */
-    .catItems{
-        margin: 20px auto;
-    }
-    
-    /* Login page */
-    .loginCard{
-        width:300px;
-        width: 90%;
-        margin: 100px auto;
-    }
-    .loginCard form{
-        height: 500px;
-    }
-    .loginCard form button{
-        width: 290px;
-        margin: 10px auto;
-    }
-    /* cart page */
-    .cartContainer{
-        margin: 70px auto;
-    }
-    .cartContainer input{
-        width: 65px;
-    }
-    
-    .picSide img{
-        width: 70px;
-        height: 50px;
-    }
-}
 
 /* Introduction responsiveness for tablet */
 @media screen and (min-width:601px) and (max-width:1024px){
@@ -1876,3 +1987,4 @@ a{
         height: 50px;
     }
 }
+

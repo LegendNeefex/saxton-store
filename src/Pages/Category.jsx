@@ -1,27 +1,8 @@
 import ContentMiniAbout from "./ContentMiniAbout";
-import stateHandler from "../context/stateHandlers";
-import { useContext } from "react";
 
 function Category() {
-    const {catData} = useContext(stateHandler)
-    
     return ( 
         <>
-            <div className="categoryContainer">
-                <h2>SaxTon products search</h2>
-                <div className="category" >
-                    {catData.map((item)=>{
-                        return(
-                            <ul key={item.id}>
-                                <li>
-                                    <a href={`/category/${item.id}`}>{item.title}</a>
-                                </li>
-                            </ul>                                  
-                        
-                        )
-                    })}
-                </div>
-            </div>
             <ContentMiniAbout />
             <div className="footer">
             <div className="containerr">

@@ -6,8 +6,7 @@ import { NavLink } from "react-router-dom";
 
 
 function Introduction() {
-    const {burgerIconHandler,burgerIcon,closeHandler,cartCount} = useContext(stateHandler)
-    const token = localStorage.getItem("token")
+    const {burgerIconHandler,burgerIcon,closeHandler,cartCount,view} = useContext(stateHandler)
 
     return (
         <>
@@ -26,7 +25,7 @@ function Introduction() {
                         <li><NavLink activeclassname="active" to="/about">About Us</NavLink></li>
                         <li><NavLink activeclassname="active" to="/contact">Contact Us</NavLink></li>
                         <li><NavLink activeclassname="active" to="/orders">Orders</NavLink></li>
-                        {token ? (
+                        {view ? (
                         <>
                             <li><NavLink activeclassname="active" to="/logout">Logout</NavLink></li>
                             <li><NavLink activeclassname="active" to="/profile">Profile</NavLink></li>
@@ -55,9 +54,8 @@ function Introduction() {
                                 <NavLink activeclassname="active" to="/category">category</NavLink>
                                 <NavLink activeclassname="active" to="/about">about us</NavLink>
                                 <NavLink activeclassname="active" to="/contact">contact us</NavLink>
-                                <NavLink activeclassname="active" to="/signup">create an account</NavLink>
                                 <NavLink activeclassname="active" to="/orders">Orders</NavLink>
-                                {token ? (
+                                {view ? (
                                 <>
                                     <NavLink activeclassname="active" to="/logout">Logout</NavLink>
                                     <NavLink activeclassname="active" to="/profile">Profile</NavLink>

@@ -1,13 +1,26 @@
 import CountryOptions from "../shared/CountryOptions"
 import { FaEye, FaEyeSlash} from "react-icons/fa";
-import { useContext, useState } from "react";
+import { useContext,useEffect,useState } from "react";
 import stateHandler from "../context/stateHandlers";
 import { NavLink,useNavigate } from "react-router-dom";
 
+
 function SignUp() {
     const navigate = useNavigate();
-    const {pwdShow,pwdHandler,text,textHandler,createUser,setText} = useContext(stateHandler)
+    const {pwdShow,pwdHandler,text,textHandler,createUser,setText,error,setError} = useContext(stateHandler)
     const [valMessage,setValMessage] = useState("")
+
+    useEffect(()=>{
+        console.log("error",error);
+        if (error === true) {
+                setValMessage("Sorry, email has already been registered")
+                setTimeout(() => {
+                    setError(false)
+                    setValMessage("")
+                }, 2000);
+            return;
+        }
+    },[error])
 
     function userFormHandler(e) {
         e.preventDefault();
@@ -24,51 +37,89 @@ function SignUp() {
         }
 
         const numValidation = (text.mobileNumber)
-        const emailTarget = ("@")
+        // const emailTarget = ("@")
         const passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9])/;
 
+        const fields = [
+            { name: "firstName", min: 3, max: 20, message: "firstname" },
+            { name: "lastName", min: 3, max: 20, message: "lastname" },
+            { name: "username", min: 6, max: 15, message: "username" },
+            {name: "email", message: "email"},
+            { name: "mobileNumber", min: 11, max: 11, message: "Mobile number" },
+            {name: "country", message: "country"},
+            { name: "password", min: 6, max: Infinity, message: "password" }
+        ];
         
-        if (text.firstName === ""||text.lastName === ""||text.email === ""||text.mobileNumber === ""||text.username === ""||text.password === ""||text.country === "") {
-            setValMessage(`All fields are required`)
-        }else if (text.firstName.trim().length <= 2) {
-            setValMessage(`firstName cannot be lesser than 3 characters`)
-        }else if (text.firstName.trim().length > 20) {
-            setValMessage(`firstName cannot be greater than 20 characters`)
-        }else if (text.lastName.trim().length <= 2) {
-            setValMessage(`lastName cannot be lesser than 3 characters`)
-        }else if (text.lastName.trim().length > 20) {
-            setValMessage(`lastName cannot be greater than 20 characters`)
-        }else if (text.username.trim().length <= 5) {
-            setValMessage(`userName cannot be lesser than 6 characters`)
-        }else if (text.username.trim().length > 15) {
-            setValMessage(`userName cannot be greater than 15 characters`)
-        }else if (!text.email.includes(emailTarget)) {
-            setValMessage(`Email must contain the @ symbol`)
-        }else if (isNaN(numValidation)) {
-            setValMessage(`MobileNumber has to be a valid number`)
-        }else if (numValidation.trim().length <= 10) {
-            setValMessage(`MobileNumber cannot be lesser than 11`)
-        }else if (numValidation.trim().length > 11) {
-            setValMessage(`MobileNumber cannot be greater than 11`)
-        }else if (text.password.trim().length <= 5) {
-            setValMessage(`password cannot be lesser than 6 characters`)  
-        }else if (!passwordReg.test(text.password.trim())) {
-            setValMessage(`
-                password must contain at least
-                1 symbol
-                1 uppercase letter
-                1 lowercase letter
-                1 numeric letter
-
-            `)
-        }else{
-            setText("",{
-                country:""
-            })
-            setValMessage("")
-            createUser(userData)
-            navigate("/")
+        const emptyField = fields.find(field => !text[field.name].trim());
+        if (emptyField) {
+            setValMessage(`${emptyField.message} is required`);
+            setTimeout(() => {
+                setValMessage("")
+            }, 2000);
+            return;
+        } else {
+            setValMessage("Please fill in all required fields");
+            setTimeout(() => {
+                setValMessage("")
+            }, 2000);
         }
+    
+        // Continue with the rest of the validation checks
+        for (const field of fields) {
+            const fieldValue = text[field.name].trim();
+    
+            if (fieldValue.length < field.min) {
+                setValMessage(`${field.message} cannot be lesser than ${field.min} characters`);
+                setTimeout(() => {
+                    setValMessage("")
+                }, 2000);
+                return;
+            } else if (fieldValue.length > field.max) {
+                setTimeout(() => {
+                    setValMessage("")
+                }, 2000);
+                setValMessage(`${field.message} cannot be greater than ${field.max} characters`);
+                return;
+            }
+        }
+
+        //email validation check
+        const emailFieldValue = text.email.trim();
+        if (!emailFieldValue.includes("@")) {
+            setValMessage("Email must contain '@' symbol");
+            setTimeout(() => {
+                setValMessage("")
+            }, 2000);
+            return;
+        }
+    
+        // Additional validation checks
+        if (isNaN(numValidation)) {
+            setValMessage(`MobileNumber has to be a valid number`);
+            setTimeout(() => {
+                setValMessage("")
+            }, 2000);
+        } else if (numValidation.trim().length !== 11) {
+            setValMessage(`MobileNumber must be exactly 11 characters`);
+            setTimeout(() => {
+                setValMessage("")
+            }, 2000);
+        }else if (!passwordReg.test(text.password.trim())) {
+            setValMessage(`Password must contain at least 1 symbol, 1 uppercase letter, 1 lowercase letter, and 1 numeric letter`);
+            setTimeout(() => {
+                setValMessage("")
+            }, 2000);
+        } else {
+            // If all validations pass
+            setText("", {country:""});
+            setValMessage("");
+            createUser(userData);
+            setValMessage("Account Successfully Created, Login on the next page")
+            setTimeout(() => {
+                setValMessage("")
+                navigate("/")
+            },2000);
+        }      
     }
     
 

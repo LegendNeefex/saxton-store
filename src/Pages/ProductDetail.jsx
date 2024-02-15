@@ -46,24 +46,6 @@ function ProductDetail() {
             </div>
           </div>
         </div>
-
-        <div className="banner">
-        <div className="links">
-          <h2>Product Match</h2>
-          <NavLink activeclassname="active" to="/products">View all Products</NavLink>
-        </div>
-
-        <div className="banCards banSpacing">
-        <div className="miniBanCards">
-        <img src="/images/hp.jpg" alt=""/>
-            <h4>Men's wear</h4>
-            <p><strong>Type</strong>: quality T-Shirt</p>
-            <p><strong>QUANTITY</strong>: 12</p>
-            <p><strong>PRICE</strong>: $90</p>
-            <NavLink activeclassname="active" to="/products/:id">More Details</NavLink>
-          </div>
-        </div>
-        </div>
         
         <div className="footer">
             <div className="containerr">

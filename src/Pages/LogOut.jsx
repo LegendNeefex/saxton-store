@@ -4,13 +4,13 @@ import stateHandler from "../context/stateHandlers"
 
 function LogOut() {
   const navigate = useNavigate();
-  const {updateAuth} = useContext(stateHandler)
+  const {setView} = useContext(stateHandler)
   const token = localStorage.getItem("token")
 
   function LogOutHandler() {
     localStorage.clear();
-    updateAuth(true)
     navigate("/")
+    setView(false)
   }
 
   return (

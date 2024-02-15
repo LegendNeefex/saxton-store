@@ -15,6 +15,9 @@ export const ApiProvider = (({children})=>{
     const [data,setData] = useState({});
     const [isAuthenticated,setIsAuthenticated] = useState(false);
     const [loginMsg,setLoginMsg] = useState("");
+    const [error,setError] = useState(false);
+    
+
     
     
     const [user,setUser] = useState([])
@@ -30,22 +33,22 @@ export const ApiProvider = (({children})=>{
         password:"",
         country:""
     })
+    const [view,setView] = useState(false)
+    const token = localStorage.getItem("token")
+
+    useEffect(()=>{
+        if (token) {
+            setView(true)
+        }else{
+            setView(false)
+        }
+    },[token])
 
     // user sign up
     useEffect(()=>{
-        userFetcher();
         orderFetcher();
-
     },[])
-
-    const userFetcher = async ()=>{
-        const apiURL = process.env.REACT_APP_API_URL
-        const response = await fetch (`${apiURL}/users`)
-        
-        const data = await response.json();
-        
-        setUser(data);
-    }
+    
 
     const createUser = async (userData)=>{
         const apiURL = process.env.REACT_APP_API_URL
@@ -56,8 +59,14 @@ export const ApiProvider = (({children})=>{
             },
             body:JSON.stringify(userData)
         })
-        const data = await response.json();
-        setUser([data, ...user])
+        if (response.ok) {
+            const data = await response.json(); 
+            setUser([data, ...user])
+        }else if (response.status === 400) {
+            setError(true)
+        }else{
+            console.error('Error checking email:', response.statusText);
+        }
     }
 
     const textHandler = (e) => {
@@ -114,6 +123,7 @@ export const ApiProvider = (({children})=>{
             // Updating the state with the order
             setOrder([orderDataWithId, ...order]);
 
+        
             // Creating OrderItems
             const orderItemResponse = await fetch(`${apiURL}/orderItems`, {
                 method: "POST",
@@ -125,7 +135,9 @@ export const ApiProvider = (({children})=>{
         
             // Updating the state with the order item
             const orderItemData = await orderItemResponse.json();
-            setOrderItem([orderItemData, ...orderItem]);
+            setTimeout(() => {
+                setOrderItem([orderItemData, ...orderItem]);
+            }, 3000);
 
 
             //make payment with paystack
@@ -327,7 +339,11 @@ export const ApiProvider = (({children})=>{
         showOrder,
         order,
         emptyOrder,
-        orderItem
+        orderItem,
+        view,
+        setView,
+        error,
+        setError
     }
 
     return <stateHandler.Provider value={stateData}>
