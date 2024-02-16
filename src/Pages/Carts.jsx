@@ -12,6 +12,7 @@ import { TiShoppingCart } from "react-icons/ti";
 
 function Carts() {
   const {cartCount,deleteHandler,cartShow,emptyCart,plusHandler,minusHandler,totalQuantity} = useContext(stateHandler)
+  const navigate = useNavigate();
 
   const token = localStorage.getItem("token")
 
@@ -19,13 +20,7 @@ function Carts() {
     cursor:"pointer",
   }
 
-  // function handleProdRoute(item) {
-  //   if (item.id !== data.id) {
-  //     return `/products/${item.id}`
-  //   }else{
-  //     return `/featuredProducts/${item.id}`
-  //   }
-  // }
+ 
   
   return (
     <>
@@ -51,7 +46,7 @@ function Carts() {
                 <div className="midSection1">
                   <div className="secConDetails1">
                     <div className="secConImg">
-                      <NavLink activeclassname="active" to="">
+                      <NavLink activeclassname="active" to={`/products/${item.id}`}>
                         <img src={item.image} alt=""/> 
                       </NavLink> 
                     </div>

@@ -115,11 +115,10 @@ export const ApiProvider = (({children})=>{
                 },
                 body: JSON.stringify(orderData),
             });
-        
             // Extracting the order id from the response
             const orderDataWithId = await orderResponse.json();
             const orderId = orderDataWithId.id;
-        
+            
             // Updating the state with the order
             setOrder([orderDataWithId, ...order]);
             

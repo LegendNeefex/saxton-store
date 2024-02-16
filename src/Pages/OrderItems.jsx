@@ -17,6 +17,7 @@ function OrderItems() {
     },[])
 
     useEffect(()=>{
+        setEmptyOrderItems(false)
         try {
             if (orderItems.length === 0 || Object.keys(handleOrderItem).length === 0) {
                 setEmptyOrderItems(true);

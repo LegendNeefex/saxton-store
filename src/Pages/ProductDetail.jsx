@@ -2,11 +2,14 @@ import { useContext,useState,useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import stateHandler from "../context/stateHandlers";
+import ContentMiniAbout from "./ContentMiniAbout";
 
 function ProductDetail() {
-  const {cartHandler,productExist} = useContext(stateHandler)
+  const {cartHandler} = useContext(stateHandler)
   const [data,setData] = useState({})
+  const [productExist,setProductExist] = useState(false)
 
+  
 
   let search = useParams();
 
@@ -18,6 +21,7 @@ function ProductDetail() {
 
               const ans = await response.json();
               setData(ans)
+              console.log(data);
           }catch(error){
               console.log(error); 
           }
@@ -25,6 +29,7 @@ function ProductDetail() {
       apiFetcher();
   },[search])
   useEffect(()=>{},[data])
+
 
     return ( 
        <>
@@ -46,6 +51,8 @@ function ProductDetail() {
             </div>
           </div>
         </div>
+
+        <ContentMiniAbout />
         
         <div className="footer">
             <div className="containerr">
