@@ -120,7 +120,9 @@ export const ApiProvider = (({children})=>{
             const orderId = orderDataWithId.id;
             
             // Updating the state with the order
-            setOrder([orderDataWithId, ...order]);
+            setTimeout(() => {
+                setOrder([orderDataWithId, ...order]);
+            }, 3000);
             
 
         
