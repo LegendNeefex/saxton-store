@@ -27,37 +27,23 @@ function ContentMiniAbout() {
                 <h2 className="section-title">Featured Brands</h2>
                 <div className="brand-cards">
                     <div className="brand-card">
-                        <NavLink activeclassname="active" to="https://www.amazon.com/" target="_blank">
-                            <img src="https://1000logos.net/wp-content/uploads/2016/10/Amazon-logo-meaning.jpg" alt="Brand 1" />
-                        </NavLink>
+                        <img src="https://1000logos.net/wp-content/uploads/2016/10/Amazon-logo-meaning.jpg" alt="Brand 1" />
                     </div>
                     <div className="brand-card">
-                        <NavLink activeclassname="active" to="https://www.ebay.com/" target="_blank">
-                            <img src="https://cdn.dribbble.com/users/28018/screenshots/728467/attachments/69310/ebaylogo-large.png?resize=400x300&vertical=center" alt="Brand 2" />
-                        </NavLink>
+                        <img src="https://cdn.dribbble.com/users/28018/screenshots/728467/attachments/69310/ebaylogo-large.png?resize=400x300&vertical=center" alt="Brand 2" />
                     </div>
                     <div className="brand-card">
-                        <NavLink activeclassname="active" to="https://www.shopify.com/" target="_blank">
-                            <img src="https://www.freepnglogos.com/uploads/shopify-logo-png/ecommerce-shopify-logo-hd-1.png" alt="Brand 3" />
-                        </NavLink>
+                        <img src="https://www.freepnglogos.com/uploads/shopify-logo-png/ecommerce-shopify-logo-hd-1.png" alt="Brand 3" />
                     </div>
                     <div className="brand-card">
-                        <NavLink activeclassname="active" to="https://www.alibaba.com/" target="_blank">
-                            <img src="https://static.stocktitan.net/company-logo/BABA-lg.png" alt="Brand 4" />
-                        </NavLink>
+                        <img src="https://static.stocktitan.net/company-logo/BABA-lg.png" alt="Brand 4" />
                     </div>
                     <div className="brand-card">
-                        <NavLink activeclassname="active" to="https://www.bestbuy.com/" target="_blank">
-                            <img src="https://corporate.bestbuy.com/wp-content/uploads/2021/01/BBY_logo_blog_header_v01.jpg" alt="Brand 5" />
-                        </NavLink>
+                        <img src="https://corporate.bestbuy.com/wp-content/uploads/2021/01/BBY_logo_blog_header_v01.jpg" alt="Brand 5" />
                     </div>
                     <div className="brand-card">
-                        <NavLink activeclassname="active" to="https://www.meta.com/" target="_blank">
-                            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/c31566130735783.6186962073880.png" alt="Brand 6" />
-                        </NavLink>
-                    </div>
-                    
-                    
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/c31566130735783.6186962073880.png" alt="Brand 6" />
+                    </div>   
                 </div>
             </div>
         </>

@@ -133,7 +133,7 @@ function CheckOut() {
           <div className="checkout-section">
             <form className="user-info-form" method="post" onSubmit={cartPreviewHandler}>
               <div className="form-group">
-              <h2>Personal Information</h2>
+              <h2>Recipient Information</h2>
                 <input type="text" id="firstName" name="firstName" value={cartText.firstName ?? ''} onChange={cartTextChange} className="form-input" autoComplete='off' placeholder='Firstname'/>
                 <input type="text" id="lastName" name="lastName" value={cartText.lastName ?? ''} onChange={cartTextChange} className="form-input" autoComplete='off' placeholder='LastName'/>
                 <input type="text" id="email" name="email" value={cartText.email ?? ''} onChange={cartTextChange} className="form-input" autoComplete='off' placeholder='Email'/>

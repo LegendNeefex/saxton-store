@@ -69,11 +69,16 @@ export const ApiProvider = (({children})=>{
         }
     }
 
+
+
     const textHandler = (e) => {
         setText((prevState) => ({
             ...prevState,
             [e.target.name]: e.target.value,
+            
         }));
+        // setText({[e.target.name]: e.target.value,})
+        console.log(text);
     }
 
     const countryClick = (e) => {
@@ -81,6 +86,7 @@ export const ApiProvider = (({children})=>{
             ...prevState,
             country: e.target.value,
         }));
+        // setText({country: e.target.value})
     }
 
     //getting all orders
