@@ -151,6 +151,7 @@ function SignUp() {
                     <div className="textDetails">
                         <h1>SaxTon</h1>
                         <h3>SaxTon helps you buy and order products of your choice .</h3>
+                        <p>Note: A valid functioning email address is required else, you won't get your order emails...</p>
                     </div>
                 </div>
         </div>

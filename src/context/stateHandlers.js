@@ -44,10 +44,6 @@ export const ApiProvider = (({children})=>{
         }
     },[token])
 
-    // user sign up
-    useEffect(()=>{
-        orderFetcher();
-    },[])
     
 
     const createUser = async (userData)=>{
@@ -89,21 +85,7 @@ export const ApiProvider = (({children})=>{
         // setText({country: e.target.value})
     }
 
-    //getting all orders
-    const orderFetcher = async ()=>{
-        const token = localStorage.getItem("token");
-        const apiURL = process.env.REACT_APP_API_URL
-        const response = await fetch (`${apiURL}/orders/user`,{
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        })
-        const data = await response.json();
-        setOrder(data);
-
-    }
-
+   
     
     //creating order and making payment
     const createOrder = async (orderData) => {
@@ -111,7 +93,7 @@ export const ApiProvider = (({children})=>{
         const apiURL = process.env.REACT_APP_API_URL
         try {
             setShowOrder(true)
-            
+
             // Creating the order
             const orderResponse = await fetch(`${apiURL}/orders`, {
                 method: "POST",
@@ -197,10 +179,17 @@ export const ApiProvider = (({children})=>{
     })
 
     useEffect(()=>{
+        const token = localStorage.getItem("token")
         try {
             if (order.length === 0) {
                 setEmptyOrder(true)
             }else{
+                if (token) {
+                    setEmptyOrder(true)
+                    
+                }else{
+                   setEmptyOrder(false)
+                }
                 setEmptyOrder(false)
             }
         } catch (error) {
@@ -345,8 +334,10 @@ export const ApiProvider = (({children})=>{
         setLoginMsg,
         emptyCartPreview,
         createOrder,
+        setEmptyOrder,
         showOrder,
         order,
+        setOrder,
         emptyOrder,
         orderItem,
         view,

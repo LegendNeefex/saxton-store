@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import ProfileSocials from "../shared/ProfileSocials";
 
 function Profile() {
   const navigate = useNavigate();
@@ -103,15 +104,13 @@ function Profile() {
           <h2>Contact Information</h2>
           <p>Email: {user.email}</p>
           <p>Phone: {user.mobileNumber}</p>
+
           <h2>Social Media</h2>
-          <p>
-            FaceBook:
-            <NavLink activeclassname="active" to="">JohnDoe</NavLink> 
-          </p>
-          <p>
-            Twitter:
-            <NavLink activeclassname="active" to="">@JohnDoe</NavLink>
-          </p> 
+          <div className="social-div">
+            <ProfileSocials />
+            <input type="text" />
+            <button className="btn-add">add</button>
+          </div>
           <p>Joined Saxton on: {new Date(user.createdAt).toLocaleString()}</p>
         </div>
       </div>

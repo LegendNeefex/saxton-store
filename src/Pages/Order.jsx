@@ -6,16 +6,40 @@ import { HashLoader, RingLoader } from "react-spinners";
 import { MdOutlineDoneOutline } from "react-icons/md";
 
 function Order() {
-    const { showOrder, order, emptyOrder} = useContext(stateHandler);
+    const { showOrder,order,setOrder,emptyOrder} = useContext(stateHandler);
     const navigate = useNavigate();
+    
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (!token) {
-            navigate("/login");
-        }
-    }, []);
+
+    // user sign up
+    useEffect(()=>{
+        orderFetcher();
+    },[])
+
+    //getting all orders
+    const orderFetcher = async ()=>{
+       try {
+            const token = localStorage.getItem("token");
+            if (!token) {
+                navigate("/login")
+            }else{
+                const apiURL = process.env.REACT_APP_API_URL
+                const response = await fetch (`${apiURL}/orders/user`,{
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    },
+                })
+                
+                const data = await response.json();
+                setOrder(data);
+            }
+       } catch (error) {
+        return ("error",error)
+       } 
+
+    }
 
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
@@ -23,8 +47,6 @@ function Order() {
         if (user) {
             setFirstName(user.firstName);
             setLastName(user.lastName);
-        } else {
-            navigate("/login");
         }
     }, []);
 
