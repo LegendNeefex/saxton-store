@@ -1,26 +1,17 @@
 import CountryOptions from "../shared/CountryOptions"
 import { FaEye, FaEyeSlash} from "react-icons/fa";
-import { useContext,useEffect,useState } from "react";
+import { useContext,useState } from "react";
 import stateHandler from "../context/stateHandlers";
 import { NavLink,useNavigate } from "react-router-dom";
 
 
 function SignUp() {
     const navigate = useNavigate();
-    const {pwdShow,pwdHandler,text,textHandler,createUser,setText,error,setError} = useContext(stateHandler)
+    const {pwdShow,pwdHandler,text,textHandler,setText,setUser,user} = useContext(stateHandler)
     const [valMessage,setValMessage] = useState("")
 
-    useEffect(()=>{
-        console.log("error",error);
-        if (error === true) {
-                setValMessage("Sorry, email has already been registered")
-                setTimeout(() => {
-                    setError(false)
-                    setValMessage("")
-                }, 2000);
-            return;
-        }
-    },[error])
+    
+
 
     function userFormHandler(e) {
         e.preventDefault();
@@ -111,18 +102,37 @@ function SignUp() {
             }, 2000);
         } else {
             // If all validations pass
-            setText("", {country:""});
-            setValMessage("");
             createUser(userData);
-            setValMessage("Account Successfully Created, Login on the next page")
-            setTimeout(() => {
-                setValMessage("")
-                navigate("/")
-            },2000);
         }      
     }
-    
 
+    const createUser = async (userData)=>{
+        const apiURL = process.env.REACT_APP_API_URL
+        const response = await fetch (`${apiURL}/users`,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(userData)
+        })
+        if (response.ok) {
+            const data = await response.json(); 
+            setUser([data, ...user])
+            setText("", {country:""});
+            setValMessage("Account Successfully Created, Login on the next page")
+            setTimeout(() => {
+                setValMessage("");
+                navigate("/login")
+            }, 3000);
+        }else if (response.status === 400) {
+            setValMessage("Sorry, Email has already been registered!")
+            setTimeout(() => {
+                setValMessage("")
+            }, 3000);
+        }else{
+            console.error('Error checking email:', response.statusText);
+        }
+    }
 
   return (
     <>

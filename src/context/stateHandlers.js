@@ -15,7 +15,6 @@ export const ApiProvider = (({children})=>{
     const [data,setData] = useState({});
     const [isAuthenticated,setIsAuthenticated] = useState(false);
     const [loginMsg,setLoginMsg] = useState("");
-    const [error,setError] = useState(false);
     
 
     
@@ -51,26 +50,6 @@ export const ApiProvider = (({children})=>{
         }
     },[token])
 
-    
-
-    const createUser = async (userData)=>{
-        const apiURL = process.env.REACT_APP_API_URL
-        const response = await fetch (`${apiURL}/users`,{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify(userData)
-        })
-        if (response.ok) {
-            const data = await response.json(); 
-            setUser([data, ...user])
-        }else if (response.status === 400) {
-            setError(true)
-        }else{
-            console.error('Error checking email:', response.statusText);
-        }
-    }
 
 
 
@@ -338,7 +317,7 @@ export const ApiProvider = (({children})=>{
         setText,
         user,
         socialClick,
-        createUser,
+        setUser,
         totalQuantity,
         isAuthenticated,
         setIsAuthenticated,
@@ -355,8 +334,6 @@ export const ApiProvider = (({children})=>{
         orderItem,
         view,
         setView,
-        error,
-        setError,
         profText,
         setProfText
     }
