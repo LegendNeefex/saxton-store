@@ -48,13 +48,9 @@ function SignUp() {
                 setValMessage("")
             }, 2000);
             return;
-        } else {
-            setValMessage("Please fill in all required fields");
-            setTimeout(() => {
-                setValMessage("")
-            }, 2000);
         }
-    
+
+        
         // Continue with the rest of the validation checks
         for (const field of fields) {
             const fieldValue = text[field.name].trim();
