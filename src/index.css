@@ -570,7 +570,7 @@ a{
     flex-direction: column;
     padding: 30px;
 }
-.loginCard form input{
+.loginPage form input{
     margin: 10px 0;
     padding: 10px 5px 10px;
     border-radius: 10px;
@@ -580,7 +580,7 @@ a{
 .loginCard .extrapads{
     padding: 10px 42px 10px 5px;
 }
-.loginCard form button{
+.loginCard button{
     border: none;
     cursor: pointer;
     background-color: var(--default-color);
@@ -589,7 +589,8 @@ a{
     width: 340px;
     white-space: nowrap;
     margin-left: -1px;
-    border-radius: 10px;  
+    border-radius: 10px; 
+    padding: 10px 0; 
 }
 .loginCard p{
     font-size: 15px;
@@ -1165,7 +1166,8 @@ a{
         outline: none;
         padding-left: 5px;
     }
-  button {
+
+  .checkout-section button {
     margin-left: 10px;
     width: 300px;
     padding: 12px;
@@ -1403,6 +1405,51 @@ a{
         margin: 0px;
         font-size: 15px;
       }
+
+      .profile-details .social-div{
+        display: flex;
+      }
+
+      .profile-details .btn-add{
+        margin-left: 10px;
+        padding: 10px;
+        color: var(--primary-color);
+        font-weight: 700;
+        background-color: var(--extra-color);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .profile-details input{
+        padding: 10px;
+        border-radius: 10px;
+        outline: none;
+        width: 250px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid var(--extra-color);
+        background-color: transparent;
+      }
+
+      .socaialContainer .socials {
+        padding: 10px 0;
+        border-radius: 10px;
+        border: 2px solid var(--extra-color);
+        outline: none;
+        width: 100px;
+        margin-right: 10px;
+      }
+
+      .profile-details .showEdit {
+       display: flex;
+       flex-direction: column;
+      }
+      .bio-info{
+        display: flex;
+      }
+    
 
 
 

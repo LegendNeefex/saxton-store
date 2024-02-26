@@ -33,6 +33,13 @@ export const ApiProvider = (({children})=>{
         password:"",
         country:""
     })
+    const [profText,setProfText] = useState({
+        bio:"",
+        pick:"",
+        social:"",
+        country:"",
+        username:""
+      })
     const [view,setView] = useState(false)
     const token = localStorage.getItem("token")
 
@@ -85,8 +92,13 @@ export const ApiProvider = (({children})=>{
         // setText({country: e.target.value})
     }
 
-   
-    
+    const socialClick = (e) => {
+        setProfText((prevState) => ({
+            ...prevState,
+            pick: e.target.value,
+        }));
+    }
+
     //creating order and making payment
     const createOrder = async (orderData) => {
         const token = localStorage.getItem("token");
@@ -325,6 +337,7 @@ export const ApiProvider = (({children})=>{
         text,
         setText,
         user,
+        socialClick,
         createUser,
         totalQuantity,
         isAuthenticated,
@@ -343,7 +356,9 @@ export const ApiProvider = (({children})=>{
         view,
         setView,
         error,
-        setError
+        setError,
+        profText,
+        setProfText
     }
 
     return <stateHandler.Provider value={stateData}>

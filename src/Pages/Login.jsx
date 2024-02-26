@@ -72,7 +72,7 @@ function Login() {
         <div className="loginPage">
             <div className="loginCard">
                 <form method="post" onSubmit={loginHandler}>
-                <h1>Log In</h1>
+                    <h1>Log In</h1>
                     <input type="text" placeholder="Email" value={loginText.email ?? ''} name="email" onChange={loginChange}/>
                     <input type={pwdShow ? "text" : "password"} placeholder="Password" className="extrapads" value={loginText.password ?? ''} name="password" onChange={loginChange}/>
                     <div className="eyes" onClick={pwdHandler}>

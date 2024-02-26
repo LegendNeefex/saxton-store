@@ -1,9 +1,13 @@
+import { useContext } from "react"
+import stateHandler from "../context/stateHandlers"
 
 function ProfileSocials() {
+    const {socialClick} = useContext(stateHandler)
   return (
     <div className="socaialContainer">
         <label htmlFor="socials">
-            <select className="socials">
+            <select className="socials" onChange={socialClick}>
+                <option value="">Socials</option>
                 <option value="FaceBook">FaceBook</option>
                 <option value="Twitter">Twitter</option>
                 <option value="Snapchat">Snapchat</option>
