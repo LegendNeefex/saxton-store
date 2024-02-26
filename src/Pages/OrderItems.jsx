@@ -89,7 +89,6 @@ function OrderItems() {
                                 </div>
                                 <div className="shipping-address">
                                     <h3>Shipping Address</h3>
-                                    <p>{`${handleOrderItem.firstName} ${handleOrderItem.lastName}`}</p>
                                     <p>{handleOrderItem.address}</p>
                                     <p>{handleOrderItem.city}</p>
                                     <p>{handleOrderItem.state}</p>
