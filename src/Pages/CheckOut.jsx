@@ -101,9 +101,9 @@ function CheckOut() {
                   <div className="midSection1 cart-prev-container">
                     <div className="secConDetails1 cart-prev-container1">
                       <div className="secConImg cart-prev-containerImg">
-                        <NavLink activeclassname="active" to="">
-                          <img src={item.image} alt="cartPic"/> 
-                        </NavLink> 
+                        <NavLink activeclassname="active" to={`/products/${item.id}`}>
+                          <img src={item.image} alt=""/> 
+                        </NavLink>
                       </div>
                       <NavLink activeclassname="active" to="">
                         <MdDelete size={"25px"}/>

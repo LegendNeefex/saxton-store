@@ -101,7 +101,7 @@ a{
     right: -5px;
     top: 20px;
     width: 200px;
-    height: 450px;
+    height: 400px;
 }
 .shortCards ul{
     text-align: center;
@@ -192,6 +192,7 @@ a{
   
   /* Container for the brand cards */
   .brand-cards {
+    text-align: center;
     display: flex;
     width: 65%;
     margin: 0 auto;
@@ -1497,6 +1498,10 @@ a{
             bottom: 0px;
             right: 0px;
         }
+        .brand-cards{
+            width: 90%;
+            margin: 0 50px;
+        }
         /* Banner */
         .banner {
             width: 90%;
@@ -1627,7 +1632,7 @@ a{
         /* contact */
         .contactContainer {
             width: 90%;
-            height: 90vh;
+            height: 620px;
         }
         .pill {
             width: 90%;
@@ -1648,7 +1653,7 @@ a{
             width: 90%;
             flex-direction: column;
         }
-        /* Checkout section */
+        /* Product section */
         .prodSection {
             flex-direction: column;
             width: 90%;
@@ -1656,7 +1661,7 @@ a{
         }
         .prodDetails {
             width: 90%;
-            margin: 0 auto 20vh;
+            margin: 0 auto 60px;
         }
         .details {
             width: 90%;
@@ -1682,33 +1687,42 @@ a{
         }
         .card .textDetails {
             width: 90%;
-            margin: 20px auto;
+            margin: 10px auto;
             text-align: center;
         }
         .card input {
             width: 250px;
         }
         .card form {
+            padding: 10px 20px;
             width: 90%;
             height: auto;
-            margin: 50px auto;
+            margin: 40px auto;
         }
         .card button {
             padding: 10px 0;
-            width: 240px;
+            margin-left: 5px;
+            width: 245px;
             text-align: center;
         }
         .countryContainer .country {
             width: 250px;
         }
         .eye {
-            right: 40px;
-            bottom: 385px;
+            position: relative;
+            right: -210px;
+            bottom: 50px;
         }
+        .eyes{
+            position: relative;
+            right: -255px;
+            bottom: 40px;
+        }
+
         .extra {
             width: 90%;
-            margin: 0 auto;
-            bottom: 230px;
+            position: relative;
+            bottom: -10px;
             text-align: center;
         }
         .card .firstExtra {
@@ -1718,6 +1732,7 @@ a{
         .orderDetailsCon ul {
             flex-direction: column;
             margin: 10px auto;
+            width: 90%;
         }
         .orderDetailsCon li {
             font-size: 14px;
@@ -1761,6 +1776,7 @@ a{
         .cartContainer .section1 {
             width: 100%;
         }
+        
         .sec2Con a {
             text-align: center;
             padding: 10px 120px;
@@ -1782,10 +1798,28 @@ a{
         .cart-prev-container .secConSales {
             margin-left: 0px;
         }
-        button {
+        .checkout-container .midSection1{
+            flex-direction: column;
+            margin: 0 auto;
+            flex-wrap: nowrap;
+        }
+        .cartContainer .secConDetails2{
+            width: 90%;
+        }
+        .checkout-container .secConDetails2{
+            width: 90%;
+        }
+
+        .form-group button {
             margin-left: -10px;
             text-align: center;
             width: 300px;
+        }
+
+        /* order Redirect */
+        .orderLoader{
+            left: 20px;
+            margin-bottom: 10px;
         }
         /* category details */
         .catItems {
@@ -1795,10 +1829,10 @@ a{
         .loginCard {
             width: 300px;
             width: 90%;
-            margin: 100px auto;
+            margin: 100px auto 470px;
         }
         .loginCard form {
-            height: 500px;
+            height: 520px;
         }
         .loginCard form button {
             width: 290px;
@@ -1806,14 +1840,26 @@ a{
         }
         /* cart page */
         .cartContainer {
-            margin: 70px auto;
+            margin: 20px auto;
         }
         .cartContainer input {
             width: 65px;
         }
+        .midSection1{
+            flex-direction: column;
+            margin: 0 auto;
+            flex-wrap: nowrap;
+        }
+        .cartContainer .secConDetails2{
+            width: 90%;
+        }
+        
         .picSide img {
             width: 70px;
             height: 50px;
+        }
+        .sec2Con{
+            margin: 30px auto;
         }
     }
 
@@ -1839,6 +1885,9 @@ a{
     .burgericon{
         display: block;
         justify-content: space-around;
+    }
+    .cartCount {
+        display: none;
     }
     .content{
         width: 90%;
@@ -1893,17 +1942,7 @@ a{
         padding: 10px 50px;
         font-size: 12px;
     }
-    /* About us page */
-    .category{
-        width: 90%;
-        margin: 30px auto;
-        flex-direction: column;
-    }
-    .category a{
-        margin: 10px auto;
-        padding: 10px 50px;
-        font-size: 12px;
-    }
+
     /* about us */
     .address{
         width: 90%;
@@ -1925,7 +1964,7 @@ a{
     }
     .found img, .veer .found img{
         width: 450px;
-        height: 300px;
+        height: 250px;
         margin: 0 auto;
     }
     .spec, .spec-1{
@@ -1942,7 +1981,7 @@ a{
     /* contact container */
     .contactContainer{
         width: 90%;
-        height: 90vh;
+        height: 700px;
     }
     .pill{
         width: 90%;
@@ -1960,7 +1999,7 @@ a{
         width: 90%;
         flex-direction: row;
     }
-    /* checkout section */
+    /* Product section */
     .prodSection{
         flex-direction: column;
         width: 90%;
@@ -1969,7 +2008,7 @@ a{
     }
     .prodDetails{
         width: 90%;
-        margin: 0 auto 20vh;
+    margin: 0 auto 60px;
     }
     
     .details{
@@ -1997,47 +2036,195 @@ a{
     }
     .card .textDetails{
         width: 90%;
-        margin: 20px auto;
+        margin: 70px auto;
         text-align: center;
     }
     .card input{
         width: 450px;
     }
     .card form{
-        width: 510px;   
-       height: 550px;
-       margin: 50px auto;
+        padding: 10px 50px;
+        width: 90%;   
+       height: auto;
+       margin: 40px auto;
+    }
+    .card button {
+        padding: 10px 0;
+        margin-left: 5px;
+        width: 445px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .countryContainer .country {
+        width: 450px;
+    }
+    .eye {
+        position: relative;
+        right: -410px;
+        bottom: 50px;
+    }
+    .eyes{
+        position: relative;
+        right: -585px;
+        bottom: 40px;
     }
     .extra{
         width: 90%;
         margin: 0 auto;
-        bottom: 230px;
+        bottom: 340px;
         text-align: center;
     }
     .card .firstExtra{
         padding: 10px 195px;
     
     }
+    /* order page */
+    .orderContainer{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .orderDetailsCon ul {
+        flex-direction: column;
+        margin: 10px auto;
+    }
+    .orderDetailsCon li {
+        font-size: 14px;
+    }
+
+    /* logout page*/
+    .logoutContainer {
+        width: 90%;
+        margin: 20px auto;
+    }
+    .logoutContainer .btn {
+        width: 100%;
+        flex-direction: column;
+        margin: 20px 0;
+        white-space: nowrap;
+    }
+    .logoutContainer .out {
+        padding: 20px 0;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    /* orderItems */
+    .order-items-container {
+        flex-direction: column;
+    }
+    .partA .customer-details,
+    .partA .shipping-method,
+    .partA .paymentmethod,
+    .partA .itemsOrdered {
+        width: 650px;
+        margin: 20px auto;
+    }
+    .partA .customer-details .flexcustomer {
+        flex-direction: column;
+    }
+    .partB {
+        width: 650px;
+        margin: 10px auto;
+    }
+    .cartContainer {
+        flex-direction: column;
+    }
+    .cartContainer .section1 {
+        width: 100%;
+    }
+    
+    .sec2Con a {
+        text-align: center;
+        padding: 10px 120px;
+    }
+    .cartContainer .secConSales {
+        margin-left: 0px;
+    }
+    .checkout-container {
+        width: 90%;
+    }
+    .checkout-section form {
+        flex-direction: column;
+    }
+    .cart-prev-container {
+        width: 90%;
+        margin-left: 20px;
+        padding-top: 10px;
+    }
+    .cart-prev-container .secConSales {
+        margin-left: 0px;
+    }
+    .checkout-container .midSection1{
+        flex-direction: column;
+        margin: 0 auto;
+        flex-wrap: nowrap;
+    }
+    .cartContainer .secConDetails2{
+        width: 90%;
+    }
+    .checkout-container .secConDetails2{
+        width: 90%;
+    }
+
+    .form-group button {
+        margin-left: -10px;
+        text-align: center;
+        width: 300px;
+    }
+
+    /* order Redirect */
+    .orderLoader{
+        left: 120px;
+        margin-bottom: 10px;
+    }
+
+    /* category details */
+    .catItems {
+        margin: 30px auto;
+    }
+    .banCards{
+        width: 90%;
+    }
+    
+    .miniBanCards {
+        object-fit: cover;
+        width:400px;
+    }
     /* log in page */
     .loginCard{
         width:300px;
         width: 90%;
-        margin: 100px auto 170px;
+        margin: 100px auto 690px;
     }
     .loginCard form{
         height: 500px;
     }
+    .loginCard form button {
+        width: 620px;
+        margin: 10px auto;
+    }
     /* cart page */
     .cartContainer{
-        margin: 100px auto 220px;
+        margin: 20px auto;
     }
     .cartContainer input{
         width: 65px;
+    }
+    .midSection1{
+        flex-direction: column;
+        margin: 0 auto;
+        flex-wrap: nowrap;
+    }
+    .cartContainer .secConDetails2{
+        width: 90%;
     }
     
     .picSide img{
         width: 70px;
         height: 50px;
+    }
+    .sec2Con{
+        margin: 30px auto;
     }
 }
 
