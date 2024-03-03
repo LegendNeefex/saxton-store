@@ -36,7 +36,7 @@ function ContentMiniAbout() {
                         <img src="https://www.freepnglogos.com/uploads/shopify-logo-png/ecommerce-shopify-logo-hd-1.png" alt="Brand 3" />
                     </div>
                     <div className="brand-card">
-                        <img src="https://static.stocktitan.net/company-logo/BABA-lg.png" alt="Brand 4" />
+                        <img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0005/6612/brand.gif?itok=8ZBniu-q" alt="Brand 4" />
                     </div>
                     <div className="brand-card">
                         <img src="https://corporate.bestbuy.com/wp-content/uploads/2021/01/BBY_logo_blog_header_v01.jpg" alt="Brand 5" />
